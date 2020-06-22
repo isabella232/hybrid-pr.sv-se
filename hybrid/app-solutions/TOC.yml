@@ -1,0 +1,74 @@
+- name: Dokumentation om Azure Hybrid
+  href: index.yml
+- name: Översikt
+  items:
+    - name: Hybridmönster och lösningsexempel
+      href: overview-patterns-solution-examples.md
+- name: Mönster
+  items:
+    - name: Enskilt
+      items:
+        - name: Skalning mellan moln
+          href: pattern-cross-cloud-scale.md
+        - name: Hybrid-CI/CD för DevOps
+          href: pattern-cicd-pipeline.md
+        - name: Geo-distribuerad app
+          href: pattern-geo-distributed.md
+        - name: Hybridrelä
+          href: pattern-hybrid-relay.md
+        - name: Nivåindelad data
+          href: pattern-tiered-data-analytics.md
+        - name: Träna ML-modell på gränsen
+          href: pattern-train-ml-model-at-edge.md
+    - name: Multi
+      items:
+        - name: Skalning mellan moln (lokala data)
+          href: pattern-cross-cloud-scale-onprem-data.md
+        - name: Fotstegsidentifiering (detaljhandel)
+          href: pattern-retail-footfall-detection.md
+        - name: Identifiering av ej lagerförda varor på gränsen
+          href: pattern-out-of-stock-at-edge.md
+- name: Guider för lösningsdistribution
+  items:
+    - name: Skalning mellan moln
+      href: solution-deployment-guide-cross-cloud-scaling.md
+    - name: Skalning mellan moln (lokala data)
+      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+    - name: Hybrid-CI/CD för DevOps
+      href: 'https://aka.ms/hybriddevopsdeploy'
+    - name: Fotstegsidentifiering (detaljhandel)
+      href: solution-deployment-guide-retail-footfall-detection.md
+    - name: Geo-distribuerad app
+      href: solution-deployment-guide-geo-distributed.md
+    - name: Hybridanslutning
+      href: solution-deployment-guide-connectivity.md
+    - name: Hybrididentitet
+      href: solution-deployment-guide-identity.md
+    - name: Hybridrelä
+      href: 'https://aka.ms/hybridrelaydeployment'
+    - name: Nivåindelad data
+      href: 'https://aka.ms/tiereddatadeploy'
+    - name: MongoDB med hög tillgänglighet
+      href: solution-deployment-guide-mongodb-ha.md
+    - name: SQL Server 2016 med hög tillgänglighet
+      href: solution-deployment-guide-sql-ha.md
+    - name: Ej lagerförda varor på gränsen
+      href: 'https://aka.ms/edgeinferencingdeploy'
+    - name: Träna ML-modeller på gränsen
+      href: 'https://aka.ms/edgetrainingdeploy'
+- name: Begrepp
+  items:
+    - name: Designöverväganden för hybridappar
+      href: overview-app-design-considerations.md
+- name: Relaterat
+  items:
+    - name: Azure-dokumentation
+      href: /azure
+    - name: Dokumentation om Azure Stack
+      href: /azure-stack
+- name: Resurser
+  items:
+    - name: Microsoft Learn
+      href: /learn
+    - name: Microsoft Q&A
+      href: /answers/products/

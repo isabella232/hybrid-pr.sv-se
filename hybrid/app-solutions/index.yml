@@ -1,0 +1,72 @@
+### YamlMime:Landing
+title: Dokumentation om Azures hybridmönster och lösningsexempel
+summary: Lär dig att använda hybridmönster och lösningsexempel i din apputveckling. Azure och Azure Stack gör det möjligt att utveckla hybridprogram via en svit med intelligenta molntjänster och intelligenta nätverksgränstjänster.
+metadata:
+  title: Dokumentation om Azures hybridmönster och lösningsexempel
+  description: Lär dig att använda hybridmönster och lösningsexempel i din apputveckling. Azure och Azure Stack gör det möjligt att utveckla hybridprogram via en svit med intelligenta molntjänster och intelligenta nätverksgränstjänster.
+  ms.service: azure-stack
+  ms.topic: landing-page
+  author: BryanLa
+  ms.author: bryanla
+  ms.date: 10/31/2019
+  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
+  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84909765"
+landingContent:
+- title: Om hybridmönster och lösningar
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vad är hybridmönster och lösningsexempel?
+      url: overview-patterns-solution-examples.md
+  - linkListType: concept
+    links:
+    - text: Designöverväganden för hybridappar
+      url: overview-app-design-considerations.md
+- title: Utforska hybridmönster
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Skalning mellan moln
+      url: pattern-cross-cloud-scale.md
+    - text: Hybrid-CI/CD för DevOps
+      url: pattern-cicd-pipeline.md
+    - text: Fotstegsidentifiering (detaljhandel)
+      url: pattern-retail-footfall-detection.md
+    - text: Geo-distribuerad app
+      url: pattern-geo-distributed.md
+- title: Distribuera exempel på hybridlösningar
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Skalning mellan moln
+      url: solution-deployment-guide-cross-cloud-scaling.md
+    - text: Hybrid-CI/CD för DevOps
+      url: https://aka.ms/hybriddevopsdeploy
+    - text: Fotstegsidentifiering (detaljhandel)
+      url: solution-deployment-guide-retail-footfall-detection.md
+    - text: Geo-distribuerad app
+      url: solution-deployment-guide-geo-distributed.md
+- title: Scenario för fotstegsidentifiering i detaljhandeln
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Mönster
+      url: pattern-retail-footfall-detection.md
+  - linkListType: tutorial
+    links:
+    - text: Guide för lösningsdistribution
+      url: solution-deployment-guide-retail-footfall-detection.md
+- title: Skala mellan moln med lokalt datascenario
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Mönster
+      url: pattern-cross-cloud-scale-onprem-data.md
+  - linkListType: tutorial
+    links:
+    - text: Guide för lösningsdistribution
+      url: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
