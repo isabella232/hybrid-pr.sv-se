@@ -76,7 +76,7 @@ I den här delen skapar du en webbapp.
 > - Peka appen Bygg till flera moln mål.
 > - Hantera och konfigurera CD-processen.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 En Azure-prenumeration och Azure Stack Hub-installation krävs.
 
@@ -248,7 +248,7 @@ Azure DevOps Services erbjuder en mycket konfigurerbar och hanterbar pipeline f�
 
 Om du vill migrera en live-webbplats och dess DNS-domännamn till App Service kan du läsa [Migrera ett aktivt DNS-namn till Azure App Service](https://docs.microsoft.com/azure/app-service/manage-custom-dns-migrate-domain).
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 För att slutföra den här lösningen:
 
@@ -357,7 +357,7 @@ I den här delen kommer vi att:
 > [!Note]  
 > Om det behövs kan du skaffa ett kund-SSL-certifikat i Azure Portal och binda det till webbappen. Mer information finns i [själv studie kursen om App Service certifikat](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site).
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 För att slutföra den här lösningen:
 

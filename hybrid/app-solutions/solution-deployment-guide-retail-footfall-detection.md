@@ -31,7 +31,7 @@ I den här lösningen får du lära dig att:
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du börjar med den här distributions guiden kontrollerar du att:
 
@@ -55,7 +55,7 @@ Innan du börjar med den här distributions guiden kontrollerar du att:
   - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). Du kan använda Porter för att distribuera molnappar med CNAB-paket manifest som du har fått.
-  - [Visual Studio-koden](https://code.visualstudio.com/)
+  - [Visuell Studio-kod](https://code.visualstudio.com/)
   - [Azure IoT-verktyg för Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
   - [Python-tillägg för Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
   - [Python](https://www.python.org/)
