@@ -39,7 +39,7 @@ Några komponenter krävs för att bygga en distribution av hybrid anslutningar.
 - Om du inte har någon Azure-prenumeration kan du [skapa ett kostnadsfritt konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) innan du börjar.
 - Skapa en [webbapp](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) i Azure. Anteckna webbappens webb adress eftersom du behöver den i lösningen.
 
-### <a name="azure-stack-hub"></a>Azure Stack hubb
+### <a name="azure-stack-hub"></a>Azure Stack Hub
 
 En Azure OEM/maskin varu partner kan distribuera en produktions Azure Stack hubb och alla användare kan distribuera en Azure Stack Development Kit (ASDK).
 
