@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b34ba7c10ff5f658d645923ae8b6de2fb2607ccb
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912099"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477277"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Distribuera en MongoDB-lösning med hög tillgänglighet till Azure och Azure Stack hubb
 
@@ -40,9 +40,9 @@ I den här lösningen skapar du en exempel miljö för att:
 - Två anslutna Azure Stack Hub-integrerade system (Azure Stack Hub). Den här distributionen fungerar inte på Azure Stack Development Kit (ASDK). Läs mer om Azure Stack Hub i [Vad är Azure Stack Hub?](https://azure.microsoft.com/products/azure-stack/hub/)
   - En klient prenumeration på varje Azure Stack hubb. 
   - **Anteckna varje prenumerations-ID och Azure Resource Manager slut punkten för varje Azure Stack Hub.**
-- Ett Azure Active Directory (Azure AD)-tjänstens huvud namn som har behörighet till klient prenumerationen på varje Azure Stack hubb. Du kan behöva skapa två huvud namn för tjänsten om Azure Stack hubbar distribueras mot olika Azure AD-klienter. Information om hur du skapar ett huvud namn för tjänsten för Azure Stack hubb finns i [använda en app-identitet för att få åtkomst till Azure Stack Hub-resurser](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+- Ett Azure Active Directory (Azure AD)-tjänstens huvud namn som har behörighet till klient prenumerationen på varje Azure Stack hubb. Du kan behöva skapa två huvud namn för tjänsten om Azure Stack hubbar distribueras mot olika Azure AD-klienter. Information om hur du skapar ett huvud namn för tjänsten för Azure Stack hubb finns i [använda en app-identitet för att få åtkomst till Azure Stack Hub-resurser](/azure-stack/user/azure-stack-create-service-principals).
   - **Anteckna varje tjänst objekts program-ID, klient hemlighet och klient namn (xxxxx.onmicrosoft.com).**
-- Ubuntu 16,04 har syndikerats till varje Azure Stack Hubbs marknads plats. Läs mer om Marketplace-syndikering i [Hämta Marketplace-objekt till Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- Ubuntu 16,04 har syndikerats till varje Azure Stack Hubbs marknads plats. Läs mer om Marketplace-syndikering i [Hämta Marketplace-objekt till Azure Stack Hub](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
 - [Docker för Windows](https://docs.docker.com/docker-for-windows/) installerat på den lokala datorn.
 
 ## <a name="get-the-docker-image"></a>Hämta Docker-avbildningen

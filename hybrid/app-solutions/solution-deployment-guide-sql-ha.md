@@ -7,16 +7,16 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ff6d5b9667e63a6b8d232b6dd93db2d8b12fd46d
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911925"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477090"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Distribuera en SQL Server 2016-tillgänglighets grupp till Azure och Azure Stack Hub
 
-I den här artikeln får du stegvisa anvisningar genom en automatiserad distribution av ett grundläggande (HA) SQL Server 2016 Enterprise-kluster med en asynkron haveri beredskap (DR) i två Azure Stack Hub-miljöer. Mer information om SQL Server 2016 och hög tillgänglighet finns i [Always on-tillgänglighets grupper: en lösning för hög tillgänglighet och katastrof återställning](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
+I den här artikeln får du stegvisa anvisningar genom en automatiserad distribution av ett grundläggande (HA) SQL Server 2016 Enterprise-kluster med en asynkron haveri beredskap (DR) i två Azure Stack Hub-miljöer. Mer information om SQL Server 2016 och hög tillgänglighet finns i [Always on-tillgänglighets grupper: en lösning för hög tillgänglighet och katastrof återställning](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
 
 I den här lösningen skapar du en exempel miljö för att:
 
@@ -40,9 +40,9 @@ I den här lösningen skapar du en exempel miljö för att:
 - Två anslutna Azure Stack Hub-integrerade system (Azure Stack Hub). Den här distributionen fungerar inte på Azure Stack Development Kit (ASDK). Mer information om Azure Stack Hub finns i [Azure Stack översikt](https://azure.microsoft.com/overview/azure-stack/).
 - En klient prenumeration på varje Azure Stack hubb.
   - **Anteckna varje prenumerations-ID och Azure Resource Manager slut punkten för varje Azure Stack Hub.**
-- Ett Azure Active Directory (Azure AD)-tjänstens huvud namn som har behörighet till klient prenumerationen på varje Azure Stack hubb. Du kan behöva skapa två huvud namn för tjänsten om Azure Stack hubbar distribueras mot olika Azure AD-klienter. Information om hur du skapar ett huvud namn för tjänsten för Azure Stack hubb finns i [skapa tjänstens huvud namn för att ge appar åtkomst till Azure Stack Hub-resurser](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+- Ett Azure Active Directory (Azure AD)-tjänstens huvud namn som har behörighet till klient prenumerationen på varje Azure Stack hubb. Du kan behöva skapa två huvud namn för tjänsten om Azure Stack hubbar distribueras mot olika Azure AD-klienter. Information om hur du skapar ett huvud namn för tjänsten för Azure Stack hubb finns i [skapa tjänstens huvud namn för att ge appar åtkomst till Azure Stack Hub-resurser](/azure-stack/user/azure-stack-create-service-principals).
   - **Anteckna varje tjänst objekts program-ID, klient hemlighet och klient namn (xxxxx.onmicrosoft.com).**
-- SQL Server 2016 Enterprise syndikerat till varje Azure Stack Hubbs marknads plats. Läs mer om Marketplace-syndikering i [Hämta Marketplace-objekt till Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- SQL Server 2016 Enterprise syndikerat till varje Azure Stack Hubbs marknads plats. Läs mer om Marketplace-syndikering i [Hämta Marketplace-objekt till Azure Stack Hub](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
     **Kontrol lera att din organisation har rätt SQL-licenser.**
 - [Docker för Windows](https://docs.docker.com/docker-for-windows/) installerat på den lokala datorn.
 
@@ -105,6 +105,6 @@ Docker-avbildningar för varje distribution eliminerar beroende problem mellan o
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Använd SQL Server Management Studio för att redundansväxla klustret manuellt. Se [utföra en framtvingad manuell redundansväxling av en tillgänglighets grupp som alltid är tillgänglig (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
+- Använd SQL Server Management Studio för att redundansväxla klustret manuellt. Se [utföra en framtvingad manuell redundansväxling av en tillgänglighets grupp som alltid är tillgänglig (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
 - Läs mer om hybrid molnappar. Se [hybrid moln lösningar.](https://aka.ms/azsdevtutorials)
 - Använd dina egna data eller ändra koden till det här exemplet på [GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

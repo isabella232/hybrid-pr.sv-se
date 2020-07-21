@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6913cc522da447092dad0af24e148a3b2576495c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911862"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477175"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Distribuera en AI-baserad lösning för identifiering av Footfall med Azure och Azure Stack hubb
 
@@ -44,7 +44,7 @@ Innan du börjar med den här distributions guiden kontrollerar du att:
 - Skapa två tjänst huvud namn i din katalog:
   - En som är konfigurerad för användning med Azure-resurser, med åtkomst i Azure-prenumerationens omfattning.
   - En konfiguration som ska användas med Azure Stack hubb resurser, med åtkomst till prenumerations omfånget Azure Stack Hub.
-  - Mer information om hur du skapar tjänstens huvud namn och hur du auktoriserar åtkomst finns i [använda en app-identitet för att få åtkomst till resurser](/azure-stack/operator/azure-stack-create-service-principals.md). Om du föredrar att använda Azure CLI kan du läsa [skapa ett Azure-tjänstens huvud namn med Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+  - Mer information om hur du skapar tjänstens huvud namn och hur du auktoriserar åtkomst finns i [använda en app-identitet för att få åtkomst till resurser](/azure-stack/operator/azure-stack-create-service-principals.md). Om du föredrar att använda Azure CLI kan du läsa [skapa ett Azure-tjänstens huvud namn med Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
 - Distribuera Azure Cognitive Services i Azure eller Azure Stack Hub.
   - Börja med att [läsa mer om Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
   - Gå sedan till [Distribuera Azure Cognitive Services till Azure Stack Hub](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) för att distribuera Cognitive Services på Azure Stack Hub. Du måste först registrera dig för att få åtkomst till för hands versionen.
@@ -55,7 +55,7 @@ Innan du börjar med den här distributions guiden kontrollerar du att:
   - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). Du kan använda Porter för att distribuera molnappar med CNAB-paket manifest som du har fått.
-  - [Visuell Studio-kod](https://code.visualstudio.com/)
+  - [Visual Studio Code](https://code.visualstudio.com/)
   - [Azure IoT-verktyg för Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
   - [Python-tillägg för Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
   - [Python](https://www.python.org/)

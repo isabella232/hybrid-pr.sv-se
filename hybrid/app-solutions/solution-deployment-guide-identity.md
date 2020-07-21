@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 1b3c683dd3e4a68413f83fd3cc129d6e6f594e1b
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 650eef0f144ecafab4586d93f72e1defdf4a61ce
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912042"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477260"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-apps"></a>Konfigurera hybrid moln identitet för Azure och Azure Stack Hub-appar
 
@@ -55,7 +55,7 @@ API-lösningen för [Azure Stack Hub](/azure-stack/user/azure-stack-rest-api-use
 
 Snabb starten [för att komma igång med PowerShell i Azure Stack Hub](/azure-stack/operator/azure-stack-powershell-install.md) vägleder dig genom de steg som krävs för att installera Azure PowerShell och ansluta till din Azure Stack Hub-installation.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 Du behöver en Azure Stack hubb installation ansluten till Azure AD med en prenumeration som du har åtkomst till. Om du inte har en Azure Stack Hub-installation kan du använda dessa instruktioner för att konfigurera en [Azure Stack Development Kit (ASDK)](/azure-stack/asdk/asdk-install.md).
 
@@ -69,4 +69,4 @@ Om du vill ansluta till Azure Stack hubb med hjälp av kod använder du API: et 
 ## <a name="next-steps"></a>Nästa steg
 
 - Mer information om hur identiteten hanteras i Azure Stack Hub finns i [identitets arkitektur för Azure Stack Hub](/azure-stack/operator/azure-stack-identity-architecture.md).
-- Mer information om moln mönster i Azure finns i [design mönster för molnet](https://docs.microsoft.com/azure/architecture/patterns).
+- Mer information om moln mönster i Azure finns i [design mönster för molnet](/azure/architecture/patterns).

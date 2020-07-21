@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 0e1a0fc4fb4110fdb406d4b4b2e72abb8f5412c9
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911850"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477294"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Konfigurera hybrid moln anslutning med Azure och Azure Stack hubb
 
@@ -30,14 +30,14 @@ I den här lösningen skapar du en exempel miljö för att:
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Några komponenter krävs för att bygga en distribution av hybrid anslutningar. Några av de här komponenterna tar tid att förbereda, så planera därför.
 
 ### <a name="azure"></a>Azure
 
 - Om du inte har någon Azure-prenumeration kan du [skapa ett kostnadsfritt konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) innan du börjar.
-- Skapa en [webbapp](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) i Azure. Anteckna webbappens webb adress eftersom du behöver den i lösningen.
+- Skapa en [webbapp](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) i Azure. Anteckna webbappens webb adress eftersom du behöver den i lösningen.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -69,7 +69,7 @@ Kontrol lera att du uppfyller följande kriterier innan du börjar konfigurera h
 
 #### <a name="solution-example-values"></a>Exempel värden för lösning
 
-I exemplen i den här lösningen används följande värden. Du kan använda dessa värden för att skapa en test miljö eller referera till dem för att få en bättre förståelse för exemplen. Mer information om inställningar för VPN gateway finns i [om VPN Gateway inställningar](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
+I exemplen i den här lösningen används följande värden. Du kan använda dessa värden för att skapa en test miljö eller referera till dem för att få en bättre förståelse för exemplen. Mer information om inställningar för VPN gateway finns i [om VPN Gateway inställningar](/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
 
 Specifikationer för anslutning:
 
@@ -99,7 +99,7 @@ IP-adresser för nätverk och undernät:
 
 ## <a name="create-a-virtual-network-in-global-azure-and-azure-stack-hub"></a>Skapa ett virtuellt nätverk i Global Azure och Azure Stack hubb
 
-Använd följande steg för att skapa ett virtuellt nätverk med hjälp av portalen. Du kan använda dessa [exempel värden](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) om du använder den här artikeln som en lösning. Om du använder den här artikeln för att konfigurera en produktions miljö ersätter du exempel inställningarna med dina egna värden.
+Använd följande steg för att skapa ett virtuellt nätverk med hjälp av portalen. Du kan använda dessa [exempel värden](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) om du använder den här artikeln som en lösning. Om du använder den här artikeln för att konfigurera en produktions miljö ersätter du exempel inställningarna med dina egna värden.
 
 > [!IMPORTANT]
 > Du måste se till att det inte finns några överlappande IP-adresser i Azure eller Azure Stack hubb för vNet-adress utrymmen.
@@ -212,4 +212,4 @@ Du kan se anslutningen på sidan **anslutningar** för den virtuella Nätverksga
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Mer information om moln mönster i Azure finns i [design mönster för molnet](https://docs.microsoft.com/azure/architecture/patterns).
+- Mer information om moln mönster i Azure finns i [design mönster för molnet](/azure/architecture/patterns).

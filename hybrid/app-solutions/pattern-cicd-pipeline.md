@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 306cc9604a8e919724f9f76b7e5122d534d2d1ae
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: e26056a9507a7467473b009725d4f210d9d59ec8
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911958"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477243"
 ---
 # <a name="devops-pattern"></a>DevOps-mönster
 
@@ -47,7 +47,7 @@ DevOps-mönstret är avsett att garantera konsekvens mellan distributioner oavse
 - Kommer distributions parametrar att fungera i alla mål miljöer?
 - Är resurs specifika egenskaper tillgängliga i alla mål moln?
 
-Mer information finns i [utveckla Azure Resource Manager mallar för moln konsekvens](https://docs.microsoft.com/azure/azure-resource-manager/templates-cloud-consistency).
+Mer information finns i [utveckla Azure Resource Manager mallar för moln konsekvens](/azure/azure-resource-manager/templates-cloud-consistency).
 
 Tänk också på följande när du bestämmer hur du ska implementera det här mönstret:
 

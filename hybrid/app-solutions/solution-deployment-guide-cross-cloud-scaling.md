@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 740a8c0ec904fe8eb3f9744626bc9dd6655bdb52
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912132"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477345"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Distribuera en app som skalar över molnet med Azure och Azure Stack hubb
 
@@ -35,7 +35,7 @@ I den här lösningen skapar du en exempel miljö för att:
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - En Azure-prenumeration. Om det behövs kan du skapa ett [kostnads fritt konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) innan du börjar.
 - Ett Azure Stack hubb integrerat system eller distribution av Azure Stack Development Kit (ASDK).
@@ -68,7 +68,7 @@ Lösningen över molnet säkerställer sömlös hantering och välbekant gränss
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Hämta en anpassad domän och konfigurera DNS
 
-Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Registrera en anpassad domän med en offentlig registrator.
 2. Logga in hos domännamnsregistratorn för domänen. En godkänd administratör kan krävas för att göra DNS-uppdateringar.
@@ -97,7 +97,7 @@ Azure-lagringsplatser
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Skapa en självständig distribution av webbappar för App Services i båda molnen
 
-1. Redigera filen **WebApplication. CSPROJ** . Välj `Runtimeidentifier` och Lägg till `win10-x64` . (Mer information finns i dokumentationen för den [självständiga distributionen](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
+1. Redigera filen **WebApplication. CSPROJ** . Välj `Runtimeidentifier` och Lägg till `win10-x64` . (Mer information finns i dokumentationen för den [självständiga distributionen](/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
 
     ![Redigera projekt fil för webbapp](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
@@ -113,7 +113,7 @@ Azure-lagringsplatser
 
     ![Lägg till kod i webbappen](media/solution-deployment-guide-cross-cloud-scaling/image4.png)
 
-3. Kör versionen. Den [fristående distributions](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) processen publicerar artefakter som körs på Azure och Azure Stack hubben.
+3. Kör versionen. Den [fristående distributions](/dotnet/core/deploying/deploy-with-vs#simpleSelf) processen publicerar artefakter som körs på Azure och Azure Stack hubben.
 
 ## <a name="use-an-azure-hosted-agent"></a>Använd en Azure-värdbaserad agent
 
@@ -211,7 +211,7 @@ Azure-pipeliner och Azure DevOps Services erbjuder en mycket konfigurerbar och h
 21. Spara alla ändringar.
 
 > [!Note]  
-> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
+> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publicera till Azure Stack hubb via Visual Studio
 
@@ -254,7 +254,7 @@ Använd [Azure Resource Manager mallar](https://azure.microsoft.com/resources/te
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Skapa en självständig distribution av webbappar för App Services i båda molnen
 
-1. Redigera filen **WebApplication. CSPROJ** : Välj `Runtimeidentifier` och Lägg sedan till `win10-x64` . Mer information finns i dokumentationen för [självständiga distributioner](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) .
+1. Redigera filen **WebApplication. CSPROJ** : Välj `Runtimeidentifier` och Lägg sedan till `win10-x64` . Mer information finns i dokumentationen för [självständiga distributioner](/dotnet/core/deploying/deploy-with-vs#simpleSelf) .
 
 2. Använd Team Explorer för att kontrol lera koden i Azure databaser.
 
@@ -268,7 +268,7 @@ Använd [Azure Resource Manager mallar](https://azure.microsoft.com/resources/te
 
 3. I **argument**, Add **-r Win10-x64** Code. Detta tillägg krävs för att utlösa en fristående distribution med .NET Core.
 
-4. Kör versionen. Den [fristående distributions](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) processen publicerar artefakter som kan köras på Azure och Azure Stack hubben.
+4. Kör versionen. Den [fristående distributions](/dotnet/core/deploying/deploy-with-vs#simpleSelf) processen publicerar artefakter som kan köras på Azure och Azure Stack hubben.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Använd en Azure Hosted build-agent
 
@@ -329,7 +329,7 @@ Att skapa en versions definition är det sista steget i bygg processen för appa
 23. Spara alla ändringar.
 
 > [!Note]  
-> Vissa inställningar för versions aktiviteter definieras automatiskt som [miljövariabler](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna men kan ändras i de överordnade miljö objekten.
+> Vissa inställningar för versions aktiviteter definieras automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna men kan ändras i de överordnade miljö objekten.
 
 ## <a name="create-a-release"></a>Skapa en version
 
@@ -361,4 +361,4 @@ En flexibel och robust tjänst för flera moln ger data säkerhet, säkerhets ko
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Mer information om moln mönster i Azure finns i [design mönster för molnet](https://docs.microsoft.com/azure/architecture/patterns).
+- Mer information om moln mönster i Azure finns i [design mönster för molnet](/azure/architecture/patterns).

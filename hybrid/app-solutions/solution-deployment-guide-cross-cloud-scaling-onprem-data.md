@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 75289eae902c5363862e345bdedb97cbcee0476e
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911859"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477328"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Distribuera en hybrid app med lokala data som skalar över molnet
 
@@ -51,7 +51,7 @@ Den här självstudien förutsätter att du har grundläggande kunskaper om Glob
 
 Den här kursen förutsätter också att du har en Azure-prenumeration. Om du inte har någon prenumeration kan du [skapa ett kostnads fritt konto](https://azure.microsoft.com/free/) innan du börjar.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du startar den här lösningen ser du till att du uppfyller följande krav:
 
@@ -131,7 +131,7 @@ Azure App Service fören klar att köra och hantera en webbapp. Eftersom Azure S
 
 ### <a name="create-web-apps"></a>Skapa webb program
 
-1. Skapa en webbapp i Azure genom att följa anvisningarna i [hantera ett App Service plan i Azure](https://docs.microsoft.com/azure/app-service/app-service-plan-manage#create-an-app-service-plan). Se till att du sätter webbappen i samma prenumeration och resurs grupp som ditt hybrid nätverk.
+1. Skapa en webbapp i Azure genom att följa anvisningarna i [hantera ett App Service plan i Azure](/azure/app-service/app-service-plan-manage#create-an-app-service-plan). Se till att du sätter webbappen i samma prenumeration och resurs grupp som ditt hybrid nätverk.
 
 2. Upprepa föregående steg (1) i Azure Stack Hub.
 
@@ -172,7 +172,7 @@ Den virtuella Nätverksgatewayen på Azure-sidan av hybrid nätverket måste til
 
 ### <a name="integrate-the-azure-app-service-app-with-the-hybrid-network"></a>Integrera Azure App Service-appen med hybrid nätverket
 
-1. Om du vill ansluta appen till Azure VNet följer du anvisningarna i [Gateway krävs VNet-integrering](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
+1. Om du vill ansluta appen till Azure VNet följer du anvisningarna i [Gateway krävs VNet-integrering](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
 
 2. Gå till **Inställningar** för App Service plan som är värd för webbappen. I **Inställningar**väljer du **nätverk**.
 
@@ -186,7 +186,7 @@ Den virtuella Nätverksgatewayen på Azure-sidan av hybrid nätverket måste til
 
     ![IP-adressintervall som ska vidarebefordras i Virtual Network-integrering](media/solution-deployment-guide-hybrid/image13.png)
 
-Mer information om hur App Service integreras med Azure virtuella nätverk finns i [integrera din app med en Azure-Virtual Network](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet).
+Mer information om hur App Service integreras med Azure virtuella nätverk finns i [integrera din app med en Azure-Virtual Network](/azure/app-service/web-sites-integrate-with-vnet).
 
 ### <a name="configure-the-azure-stack-hub-virtual-network"></a>Konfigurera det virtuella nätverket för Azure Stack hubb
 
@@ -210,7 +210,7 @@ I den här självstudien används Azure DNS för att hantera DNS eftersom App Se
 
 ### <a name="create-subdomains"></a>Skapa under domäner
 
-Eftersom Traffic Manager är beroende av DNS-CNAME, krävs en under domän för att dirigera trafik till slut punkter korrekt. Mer information om DNS-poster och domän mappning finns i [Mappa domäner med Traffic Manager](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager-custom-domain-name).
+Eftersom Traffic Manager är beroende av DNS-CNAME, krävs en under domän för att dirigera trafik till slut punkter korrekt. Mer information om DNS-poster och domän mappning finns i [Mappa domäner med Traffic Manager](/azure/app-service/web-sites-traffic-manager-custom-domain-name).
 
 För Azure-slutpunkten skapar du en under domän som användare kan använda för att få åtkomst till din webbapp. I den här självstudien kan använda **app.Northwind.com**, men du bör anpassa det här värdet baserat på din egen domän.
 
@@ -218,13 +218,13 @@ Du måste också skapa en under domän med en A-post för Azure Stack Hub-slutpu
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Konfigurera en anpassad domän i Azure
 
-1. Lägg till **app.Northwind.com** -värdnamnet i Azure-webbappen genom att [Mappa en CNAME till Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
+1. Lägg till **app.Northwind.com** -värdnamnet i Azure-webbappen genom att [Mappa en CNAME till Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
 
 ### <a name="configure-custom-domains-in-azure-stack-hub"></a>Konfigurera anpassade domäner i Azure Stack hubb
 
-1. Lägg till **azurestack.Northwind.com** -värdnamnet i Azure Stack Hub-webbappen genom [att mappa en A-post till Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Använd IP-adressen Internet-dirigerbart för App Service-appen.
+1. Lägg till **azurestack.Northwind.com** -värdnamnet i Azure Stack Hub-webbappen genom [att mappa en A-post till Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Använd IP-adressen Internet-dirigerbart för App Service-appen.
 
-2. Lägg till **app.Northwind.com** -värdnamnet i Azure Stack Hub-webbappen genom att [Mappa en CNAME till Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Använd det värdnamn som du konfigurerade i föregående steg (1) som mål för CNAME.
+2. Lägg till **app.Northwind.com** -värdnamnet i Azure Stack Hub-webbappen genom att [Mappa en CNAME till Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Använd det värdnamn som du konfigurerade i föregående steg (1) som mål för CNAME.
 
 ## <a name="configure-ssl-certificates-for-cross-cloud-scaling"></a>Konfigurera SSL-certifikat för skalning över molnet
 
@@ -238,9 +238,9 @@ Så här lägger du till SSL i Azure:
 
 1. Kontrol lera att SSL-certifikatet som du får är giltigt för den under domän som du skapade. (Det är OK att använda certifikat med jokertecken.)
 
-2. I Azure följer du anvisningarna i avsnittet **förbereda din webbapp** och **binder ditt SSL-certifikat** i avsnittet [BIND ett befintligt anpassat ssl-certifikat till Azure Web Apps](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) -artikeln. Välj **SNI-baserad SSL** som **SSL-typ**.
+2. I Azure följer du anvisningarna i avsnittet **förbereda din webbapp** och **binder ditt SSL-certifikat** i avsnittet [BIND ett befintligt anpassat ssl-certifikat till Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) -artikeln. Välj **SNI-baserad SSL** som **SSL-typ**.
 
-3. Omdirigera all trafik till HTTPS-porten. Följ instruktionerna i avsnittet om att **använda https** i avsnittet [BIND ett befintligt anpassat SSL-certifikat till Azure Web Apps](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) .
+3. Omdirigera all trafik till HTTPS-porten. Följ instruktionerna i avsnittet om att **använda https** i avsnittet [BIND ett befintligt anpassat SSL-certifikat till Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) .
 
 Så här lägger du till SSL till Azure Stack Hub:
 
@@ -248,13 +248,13 @@ Så här lägger du till SSL till Azure Stack Hub:
 
 ## <a name="configure-and-deploy-the-web-app"></a>Konfigurera och distribuera webbappen
 
-Du konfigurerar appens kod för att rapportera telemetri till rätt Application Insights-instans och konfigurera webbapparna med rätt anslutnings strängar. Mer information om Application Insights finns i [Vad är Application Insights?](https://docs.microsoft.com/azure/application-insights/app-insights-overview)
+Du konfigurerar appens kod för att rapportera telemetri till rätt Application Insights-instans och konfigurera webbapparna med rätt anslutnings strängar. Mer information om Application Insights finns i [Vad är Application Insights?](/azure/application-insights/app-insights-overview)
 
 ### <a name="add-application-insights"></a>Lägg till Application Insights
 
 1. Öppna din webbapp i Microsoft Visual Studio.
 
-2. [Lägg till Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) i projektet för att överföra telemetri som Application Insights använder för att skapa aviseringar när webb trafiken ökar eller minskar.
+2. [Lägg till Application Insights](/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) i projektet för att överföra telemetri som Application Insights använder för att skapa aviseringar när webb trafiken ökar eller minskar.
 
 ### <a name="configure-dynamic-connection-strings"></a>Konfigurera dynamiska anslutnings strängar
 
@@ -287,7 +287,7 @@ Du kan använda App Service miljövariabler för att skicka en annan anslutnings
 
 1. Skapa anslutnings strängar för Azure och Azure Stack Hub. Strängarna måste vara desamma, förutom de IP-adresser som används.
 
-2. I Azure och Azure Stack hubb lägger du till rätt anslutnings sträng [som en app-inställning](https://docs.microsoft.com/azure/app-service/web-sites-configure) i webbappen med `SQLCONNSTR\_` som ett prefix i namnet.
+2. I Azure och Azure Stack hubb lägger du till rätt anslutnings sträng [som en app-inställning](/azure/app-service/web-sites-configure) i webbappen med `SQLCONNSTR\_` som ett prefix i namnet.
 
 3. **Spara** inställningarna för webbappen och starta om appen.
 
@@ -543,4 +543,4 @@ Använd följande steg som en guide för att konfigurera automatisk trafik växl
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Mer information om moln mönster i Azure finns i [design mönster för molnet](https://docs.microsoft.com/azure/architecture/patterns).
+- Mer information om moln mönster i Azure finns i [design mönster för molnet](/azure/architecture/patterns).

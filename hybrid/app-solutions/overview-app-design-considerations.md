@@ -7,20 +7,20 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4fd52f76baad8059e130adfc01cdd0152b40a510
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911955"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477226"
 ---
-# <a name="hybrid-app-design-considerations"></a>Design överväganden för Hybrid appar
+# <a name="hybrid-app-design-considerations"></a>Designöverväganden för hybridappar
 
 Microsoft Azure är det enda konsekventa hybrid molnet. Det gör att du kan återanvända dina utvecklings investeringar och göra det möjligt för appar som kan sträcka sig över globala Azure, de suveräna Azure-molnen och Azure Stack, som är en förlängning av Azure i ditt data Center. Appar som sträcker sig över moln kallas även *hybrid appar*.
 
-I [*guiden Azure Application arkitektur*](https://docs.microsoft.com/azure/architecture/guide) beskrivs en strukturerad metod för att utforma appar som är skalbara, elastiska och hög tillgängliga. De överväganden som beskrivs i [*Azure Application arkitektur guiden*](https://docs.microsoft.com/azure/architecture/guide) gäller även för appar som är utformade för ett enda moln och för appar som omfattar moln.
+I [*guiden Azure Application arkitektur*](/azure/architecture/guide) beskrivs en strukturerad metod för att utforma appar som är skalbara, elastiska och hög tillgängliga. De överväganden som beskrivs i [*Azure Application arkitektur guiden*](/azure/architecture/guide) gäller även för appar som är utformade för ett enda moln och för appar som omfattar moln.
 
-Den här artikeln innehåller en utökning av de [*pelare för program varu kvaliteten*](https://docs.microsoft.com/azure/architecture/guide/pillars) som diskuteras i [*Azure Application*](https://docs.microsoft.com/azure/architecture/guide/) [ *arkitektur guide*,](https://docs.microsoft.com/azure/architecture/guide/) som fokuserar på att utforma hybrid appar. Dessutom lägger vi till en *placerings* pelare eftersom hybrid appar inte är exklusiva till ett moln eller ett lokalt Data Center.
+Den här artikeln innehåller en utökning av de [*pelare för program varu kvaliteten*](/azure/architecture/guide/pillars) som diskuteras i [*Azure Application*](/azure/architecture/guide/) [ *arkitektur guide*,](/azure/architecture/guide/) som fokuserar på att utforma hybrid appar. Dessutom lägger vi till en *placerings* pelare eftersom hybrid appar inte är exklusiva till ett moln eller ett lokalt Data Center.
 
 Hybrid scenarier varierar kraftigt med de resurser som är tillgängliga för utveckling och omfattar bland annat geografi, säkerhet, Internet åtkomst och andra överväganden. Även om den här hand boken inte kan räkna upp dina speciella överväganden kan du ange några viktiga rikt linjer och metod tips som du kan följa. Att designa, konfigurera, distribuera och underhålla en hybrid program arkitektur omfattar många design överväganden som kanske inte är kända för dig.
 
@@ -93,7 +93,7 @@ Placering är den viktigaste uppgiften att placera komponenter så att de bäst 
 
 **Verifiera nödvändiga platser.** Kontrol lera att appen eller någon av dess komponenter krävs för att kunna användas i, eller Kräv certifiering för, ett särskilt moln. Detta kan innefatta suveränitets krav från företaget eller dikteras enligt lag. Ta också reda på om det krävs några lokala åtgärder för en viss plats eller nationella inställningar.
 
-**Fastställa anslutnings beroenden.** Obligatoriska platser och andra faktorer kan diktera anslutnings beroenden mellan dina komponenter. När du placerar komponenterna bestämmer du optimal anslutning och säkerhet för kommunikation mellan dem. Alternativen är [ *VPN*,](https://docs.microsoft.com/azure/vpn-gateway/) [ *ExpressRoute*](https://docs.microsoft.com/azure/expressroute/) och [ *hybridanslutningar*.](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
+**Fastställa anslutnings beroenden.** Obligatoriska platser och andra faktorer kan diktera anslutnings beroenden mellan dina komponenter. När du placerar komponenterna bestämmer du optimal anslutning och säkerhet för kommunikation mellan dem. Alternativen är [ *VPN*,](/azure/vpn-gateway/) [ *ExpressRoute*](/azure/expressroute/) och [ *hybridanslutningar*.](/azure/app-service/app-service-hybrid-connections)
 
 **Utvärdera plattforms funktioner.** För varje app-komponent, se om den obligatoriska resurs leverantören för app-komponenten är tillgänglig i molnet och om bandbredden kan hantera det förväntade data flödet och latens krav.
 
@@ -109,7 +109,7 @@ Placering är den viktigaste uppgiften att placera komponenter så att de bäst 
 
 Skalbarhet är möjligheten för ett system att hantera ökad belastning på en app, vilket kan variera över tid som andra faktorer och tvingar till att påverka mål gruppens storlek, förutom appens storlek och omfattning.
 
-För kärn diskussionen om denna pelare, se [*skalbarhet*](https://docs.microsoft.com/azure/architecture/guide/pillars#scalability) i de fem grundarna av arkitektur expert.
+För kärn diskussionen om denna pelare, se [*skalbarhet*](/azure/architecture/guide/pillars#scalability) i de fem grundarna av arkitektur expert.
 
 Med en horisontell skalnings metod för Hybrid appar kan du lägga till fler instanser för att möta efter frågan och sedan inaktivera dem under tysta perioder.
 
@@ -155,7 +155,7 @@ För kärn diskussionen om denna pelare, se [*tillgänglighet*](/azure/architect
 
 Återhämtning är möjligheten för en hybrid app och ett system att återställa efter fel och fortsätta att fungera. Målet med återhämtning är att returnera appen till ett fullständigt fungerande tillstånd när ett fel har inträffat. Återhämtnings strategier omfattar lösningar som säkerhets kopiering, replikering och haveri beredskap.
 
-För kärn diskussionen om den här pelaren, se [*återhämtning*](https://docs.microsoft.com/azure/architecture/guide/pillars#resiliency) i de fem grundarna av arkitektur expert.
+För kärn diskussionen om den här pelaren, se [*återhämtning*](/azure/architecture/guide/pillars#resiliency) i de fem grundarna av arkitektur expert.
 
 ### <a name="resiliency-checklist"></a>Checklista för elasticitet
 
@@ -201,7 +201,7 @@ Bestäm vilka delar av appen som kräver övervakning.
 
 Säkerhet är ett av de viktigaste övervägandena för alla molnappar och det blir ännu mer viktigt för Hybrid molnappar.
 
-För kärn diskussionen om den här pelaren, se [*säkerhet*](https://docs.microsoft.com/azure/architecture/guide/pillars#security) i de fem grundarna av arkitektur expert.
+För kärn diskussionen om den här pelaren, se [*säkerhet*](/azure/architecture/guide/pillars#security) i de fem grundarna av arkitektur expert.
 
 ### <a name="security-checklist"></a>Säkerhetskontrollista
 

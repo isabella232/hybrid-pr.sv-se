@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 8f2b7e48a62896acfce7293dcd4f18d5a43add01
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912045"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477362"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Dirigera trafik med en geo-distribuerad app med Azure och Azure Stack hubb
 
@@ -52,7 +52,7 @@ Innan du skapar en distribuerad app kan du känna till följande saker:
 
 - **Anpassad domän för appen:** Vad är det anpassade domän namnet som kunder kommer att använda för att få åtkomst till appen? För exempel appen är det anpassade domän namnet www- * \. scalableasedemo.com.*
 
-- **Traffic Manager domän:** Du väljer ett domän namn när du skapar en [Azure Traffic Manager-profil](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles). Det här namnet kombineras med *trafficmanager.net* -suffixet för att registrera en domän post som hanteras av Traffic Manager. För exempel appen är det valda namnet *skalbart-ASE-demo*. Därför är det fullständiga domän namnet som hanteras av Traffic Manager *Scalable-ASE-demo.trafficmanager.net*.
+- **Traffic Manager domän:** Du väljer ett domän namn när du skapar en [Azure Traffic Manager-profil](/azure/traffic-manager/traffic-manager-manage-profiles). Det här namnet kombineras med *trafficmanager.net* -suffixet för att registrera en domän post som hanteras av Traffic Manager. För exempel appen är det valda namnet *skalbart-ASE-demo*. Därför är det fullständiga domän namnet som hanteras av Traffic Manager *Scalable-ASE-demo.trafficmanager.net*.
 
 - **Strategi för skalning av appens avtryck:** Bestäm om appens utrymme ska distribueras över flera App Service miljöer i en enda region, flera regioner eller en blandning av båda metoderna. Beslutet bör baseras på förväntningar av var kund trafiken kommer att slutföras och hur väl resten av en Apps stödjande backend-infrastruktur kan skalas. Till exempel, med en tillstånds lös app på 100%, kan en app skalas enorma med en kombination av flera App Service miljöer per Azure-region, multiplicerat med App Service miljöer som distribuerats över flera Azure-regioner. Med 15 globala Azure-regioner som är tillgängliga för att välja bland kan kunder verkligen bygga en världs omfattande storskalig app. För exempel programmet som används här har tre App Service miljöer skapats i en enda Azure-region (södra centrala USA).
 
@@ -84,7 +84,7 @@ En Azure-prenumeration och Azure Stack Hub-installation krävs.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Skaffa en anpassad domän och konfigurera DNS
 
-Uppdatera DNS-zonfilen för domänen. Azure AD kan sedan verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Uppdatera DNS-zonfilen för domänen. Azure AD kan sedan verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Registrera en anpassad domän med en offentlig registrator.
 
@@ -113,7 +113,7 @@ Konfigurera hybrid kontinuerlig integrering/kontinuerlig leverans (CI/CD) för a
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Skapa webb program distribution i båda molnen
 
-1. Redigera filen **WebApplication. CSPROJ** : Välj `Runtimeidentifier` och Lägg till `win10-x64` . (Mer information finns i dokumentationen för den [självständiga distributionen](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
+1. Redigera filen **WebApplication. CSPROJ** : Välj `Runtimeidentifier` och Lägg till `win10-x64` . (Mer information finns i dokumentationen för den [självständiga distributionen](/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
 
     ![Redigera webb program projekt filen i Visual Studio](media/solution-deployment-guide-geo-distributed/image3.png)
 
@@ -129,7 +129,7 @@ Konfigurera hybrid kontinuerlig integrering/kontinuerlig leverans (CI/CD) för a
 
     ![Lägga till kod i build-definitionen i Azure-pipeline](media/solution-deployment-guide-geo-distributed/image4.png)
 
-3. **Kör versionen**. Den [fristående distributions](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) processen publicerar artefakter som kan köras på Azure och Azure Stack hubben.
+3. **Kör versionen**. Den [fristående distributions](/dotnet/core/deploying/deploy-with-vs#simpleSelf) processen publicerar artefakter som kan köras på Azure och Azure Stack hubben.
 
 #### <a name="using-an-azure-hosted-agent"></a>Använda en Azure-värdbaserad agent
 
@@ -229,11 +229,11 @@ Azure DevOps Services erbjuder en mycket konfigurerbar och hanterbar pipeline f�
 21. Spara alla ändringar.
 
 > [!Note]  
-> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
+> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
 
 ## <a name="part-2-update-web-app-options"></a>Del 2: uppdatera webb programs alternativ
 
-[Azure App Service](https://docs.microsoft.com/azure/app-service/overview) ger en mycket skalbar och automatisk korrigering av webb värd tjänst.
+[Azure App Service](/azure/app-service/overview) ger en mycket skalbar och automatisk korrigering av webb värd tjänst.
 
 ![Azure App Service](media/solution-deployment-guide-geo-distributed/image27.png)
 
@@ -246,17 +246,17 @@ Azure DevOps Services erbjuder en mycket konfigurerbar och hanterbar pipeline f�
 > [!Note]  
 > Använd en CNAME för alla anpassade DNS-namn förutom en rot domän (till exempel northwind.com).
 
-Om du vill migrera en live-webbplats och dess DNS-domännamn till App Service kan du läsa [Migrera ett aktivt DNS-namn till Azure App Service](https://docs.microsoft.com/azure/app-service/manage-custom-dns-migrate-domain).
+Om du vill migrera en live-webbplats och dess DNS-domännamn till App Service kan du läsa [Migrera ett aktivt DNS-namn till Azure App Service](/azure/app-service/manage-custom-dns-migrate-domain).
 
 ### <a name="prerequisites"></a>Förutsättningar
 
 För att slutföra den här lösningen:
 
-- [Skapa en app service app](https://docs.microsoft.com/azure/app-service/)eller Använd en app som skapats för en annan lösning.
+- [Skapa en app service app](/azure/app-service/)eller Använd en app som skapats för en annan lösning.
 
 - Köp ett domän namn och se till att du har åtkomst till DNS-registret för domän leverantören.
 
-Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 - Registrera en anpassad domän med en offentlig registrator.
 
@@ -267,14 +267,14 @@ Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet 
 Om du till exempel vill lägga till DNS-poster för northwindcloud.com och www \. -northwindcloud.com konfigurerar du DNS-inställningarna för rot domänen northwindcloud.com.
 
 > [!Note]  
-> Du kan köpa ett domän namn med hjälp av [Azure Portal](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain). För att kunna mappa ett anpassat DNS-namn till en webbapp måste webbappens [App Service-plan](https://azure.microsoft.com/pricing/details/app-service/) vara en betalplan (**Delad**, **Basic**, **Standard** eller **Premium**).
+> Du kan köpa ett domän namn med hjälp av [Azure Portal](/azure/app-service/manage-custom-dns-buy-domain). För att kunna mappa ett anpassat DNS-namn till en webbapp måste webbappens [App Service-plan](https://azure.microsoft.com/pricing/details/app-service/) vara en betalplan (**Delad**, **Basic**, **Standard** eller **Premium**).
 
 ### <a name="create-and-map-cname-and-a-records"></a>Skapa och mappa CNAME-och A-poster
 
 #### <a name="access-dns-records-with-domain-provider"></a>Använda DNS-poster med domänleverantör
 
 > [!Note]  
->  Använd Azure DNS för att konfigurera ett anpassat DNS-namn för Azure Web Apps. Mer information finns i [Använda Azure DNS för att skapa inställningar för anpassad domän för en Azure-tjänst](https://docs.microsoft.com/azure/dns/dns-custom-domain).
+>  Använd Azure DNS för att konfigurera ett anpassat DNS-namn för Azure Web Apps. Mer information finns i [Använda Azure DNS för att skapa inställningar för anpassad domän för en Azure-tjänst](/azure/dns/dns-custom-domain).
 
 1. Logga in på webbplatsen för huvud-providern.
 
@@ -355,14 +355,14 @@ I den här delen kommer vi att:
 > - Automatisera SSL-certifikat bindning med skript.
 
 > [!Note]  
-> Om det behövs kan du skaffa ett kund-SSL-certifikat i Azure Portal och binda det till webbappen. Mer information finns i [själv studie kursen om App Service certifikat](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site).
+> Om det behövs kan du skaffa ett kund-SSL-certifikat i Azure Portal och binda det till webbappen. Mer information finns i [själv studie kursen om App Service certifikat](/azure/app-service/web-sites-purchase-ssl-web-site).
 
 ### <a name="prerequisites"></a>Förutsättningar
 
 För att slutföra den här lösningen:
 
-- [Skapa en App Service-app.](https://docs.microsoft.com/azure/app-service/)
-- [Mappa ett anpassat DNS-namn till din webbapp.](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
+- [Skapa en App Service-app.](/azure/app-service/)
+- [Mappa ett anpassat DNS-namn till din webbapp.](/azure/app-service/app-service-web-tutorial-custom-domain)
 - Hämta ett SSL-certifikat från en betrodd certifikat utfärdare och Använd nyckeln för att signera begäran.
 
 ### <a name="requirements-for-your-ssl-certificate"></a>Krav för ditt SSL-certifikat
@@ -402,7 +402,7 @@ För att binda ett anpassat SSL-certifikat till webbappen måste [App Service pl
 
     ![Kontrol lera pris nivån i webb programmet](media/solution-deployment-guide-geo-distributed/image35.png)
 
-Anpassad SSL stöds inte på nivån **kostnads fri** eller **delad** . Följ stegen i nästa avsnitt eller sidan **Välj pris nivå** och hoppa över för att [Ladda upp och binda ditt SSL-certifikat](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Anpassad SSL stöds inte på nivån **kostnads fri** eller **delad** . Följ stegen i nästa avsnitt eller sidan **Välj pris nivå** och hoppa över för att [Ladda upp och binda ditt SSL-certifikat](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 #### <a name="scale-up-your-app-service-plan"></a>Skala upp App Service-planen
 
@@ -463,7 +463,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 När du uppmanas till det anger du ett export lösen ord för att ladda upp SSL-certifikatet till App Service senare.
 
-När IIS eller **Certreq.exe** används för att generera en certifikatbegäran installerar du certifikatet på en lokal dator och [exporterar certifikatet till PFX](https://technet.microsoft.com/library/cc754329(v=ws.11).aspx).
+När IIS eller **Certreq.exe** används för att generera en certifikatbegäran installerar du certifikatet på en lokal dator och [exporterar certifikatet till PFX](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754329(v=ws.11)).
 
 #### <a name="upload-the-ssl-certificate"></a>Ladda upp SSL-certifikatet
 
@@ -508,13 +508,13 @@ När App Service har laddat upp certifikatet visas det i avsnitten **SSL-bindnin
 
 #### <a name="remap-the-a-record-for-ip-ssl"></a>Mappa om A-posten för IP SSL
 
-Om IP-baserad SSL inte används i webbappen går du vidare till [testa https för din anpassade domän](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Om IP-baserad SSL inte används i webbappen går du vidare till [testa https för din anpassade domän](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 Som standard använder webbapp en delad offentlig IP-adress. När certifikatet är kopplat till IP-baserad SSL skapar App Service en ny och dedikerad IP-adress för webbappen.
 
 När en A-post mappas till webbappen måste domän registret uppdateras med den dedikerade IP-adressen.
 
-Sidan **anpassad domän** uppdateras med den nya, dedikerade IP-adressen. Kopiera den här [IP-adressen](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)och mappa sedan om A- [posten](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain) till den nya IP-adressen.
+Sidan **anpassad domän** uppdateras med den nya, dedikerade IP-adressen. Kopiera den här [IP-adressen](/azure/app-service/app-service-web-tutorial-custom-domain)och mappa sedan om A- [posten](/azure/app-service/app-service-web-tutorial-custom-domain) till den nya IP-adressen.
 
 #### <a name="test-https"></a>Testa HTTPS
 
@@ -533,7 +533,7 @@ På sidan webb program väljer du **SL-inställningar**. I **Endast HTTPS** väl
 
 ![Använda HTTPS](media/solution-deployment-guide-geo-distributed/image43.png)
 
-När åtgärden har slutförts går du till någon av de HTTP-URL: er som pekar på appen. Ett exempel:
+När åtgärden har slutförts går du till någon av de HTTP-URL: er som pekar på appen. Exempel:
 
 - https://<app_name>. azurewebsites.net
 - `https://northwindcloud.com`
@@ -626,4 +626,4 @@ Genom att dirigera data trafik via Azure Traffic Manager och geografibaserade sl
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Mer information om moln mönster i Azure finns i [design mönster för molnet](https://docs.microsoft.com/azure/architecture/patterns).
+- Mer information om moln mönster i Azure finns i [design mönster för molnet](/azure/architecture/patterns).
