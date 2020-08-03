@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: ab8146340f284af226f336af8fddd2a30977869d
-  ms.sourcegitcommit: 2efdd6422c2af773ad7890dcbc546e816e501c0e
+  ms.openlocfilehash: b888756accc1e538d358e91aec6740b392dafea0
+  ms.sourcegitcommit: 72dbbc933220a4e7273abf46ad3fc6032d122ca7
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87264105"
+  ms.lasthandoff: 07/31/2020
+  ms.locfileid: "87473808"
 highlightedContent:
   items:
   - title: Upptäck nya Azure Stack HCI
@@ -56,7 +56,7 @@ productDirectory:
     - url: /azure-stack/hci
       text: Azure Stack HCI
   - title: Intelligenta nätverksgränsplattformar för enheter.
-    imageSrc: media/index/azure-stack-hub.svg
+    imageSrc: media/index/intelligent.svg
     links:
     - url: /azure/iot-edge/
       text: Azure IoT Edge
@@ -251,6 +251,20 @@ conceptualContent:
     - url: /azure/fxt-edge-filer/fxt-overview
       itemType: overview
       text: Azure FXT Edge Filer
+  - title: Verktyg
+    links:
+    - url: /dotnet/azure/
+      itemType: overview
+      text: .NET-utveckling för Azure
+    - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+      itemType: overview
+      text: Vision AI Developer Kit
+    - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+      itemType: overview
+      text: Azure IoT-verktyg för Visual Studio Code
+    - url: /visualstudio/azure/
+      itemType: overview
+      text: Visual Studio Azure-utveckling
 additionalContent:
   sections:
   - title: Hybridlösningar
@@ -283,43 +297,43 @@ additionalContent:
         text: Geo-distribuerad app
   - title: Ytterligare resurser
     items:
-    - title: Allmänna resurser
+    - title: Allmänt
       links:
       - url: /azure-stack/operator/compare-azure-azure-stack
         text: Globalt Azure-moln jämfört med Azure Stack
+      - url: https://azure.microsoft.com/blog/topics/hybrid/
+        text: Azure Hybrid-blogg
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Hybridfunktioner i Azure
-      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
-        text: Introduktion till Azure Stack-hybridprogram
+      - url: https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22
+        text: Azure Stack Hub-kundlösningar
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: Kundberättelser om hybridmoln
-      - url: /learn
-        text: Interaktiv utbildning med Microsoft Learn
-      - url: /learn/tv/
-        text: Microsoft Learn TV
-    - title: Resurser för skapande och drift
+      - url: /answers/products/
+        text: Frågor och svar på Microsofts forum
+    - title: Utvärdering och inlärning
       links:
-      - url: /dotnet/azure/
-        text: .NET-utveckling för Azure
       - url: https://github.com/likamrat/azure_arc
         text: Kom igång-guider för Azure Arc
+      - url: https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator
+        text: Lösningsaccelerator för Azure IoT Edge AI-videoinformation
+      - url: https://labs.iotedge.dev/
+        text: Praktiska Azure IoT Edge-labb
+      - url: https://www.azureiotsolutions.com/Accelerators
+        text: Azure IoT-lösningsacceleratorer
+      - url: /azure-stack/asdk
+        text: Azure Stack-development kit
       - url: https://github.com/Azure/AzureStackHCI-EvalGuide
         text: Utvärderingsguiden för Azure Stack HCI
+      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
+        text: Introduktion till Azure Stack-hybridappar
       - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
         text: Certifierad för Azure IoT Edge-enheter
       - url: /samples/browse/
-        text: Webbläsare för kodexempel
+        text: Kodexempelutforskare
+      - url: https://docs.docker.com/
+        text: Docker-dokument
       - url: https://www.youtube.com/watch?v=2lw8zOpJTn0
         text: Skala dynamiskt från Azure Stack Hub till Azure
-      - url: https://labs.iotedge.dev/
-        text: Praktiska IoT Edge-labb
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Vision AI Developer Kit
-      - url: /visualstudio/azure/
-        text: Visual Studio Azure-utveckling
-    - title: Support och andra resurser
-      links:
-      - url: https://azure.microsoft.com/blog/topics/hybrid/
-        text: Azure Hybrid-blogg
-      - url: /answers/products/
-        text: Frågor och svar på Microsofts forum
+      - url: /learn
+        text: Microsoft Learn
