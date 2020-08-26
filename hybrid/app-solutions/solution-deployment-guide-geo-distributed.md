@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477362"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886840"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Dirigera trafik med en geo-distribuerad app med Azure och Azure Stack hubb
 
@@ -84,7 +84,7 @@ En Azure-prenumeration och Azure Stack Hub-installation krävs.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Skaffa en anpassad domän och konfigurera DNS
 
-Uppdatera DNS-zonfilen för domänen. Azure AD kan sedan verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Uppdatera DNS-zonfilen för domänen. Azure AD kan sedan verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för azure/Microsoft 365/external DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 1. Registrera en anpassad domän med en offentlig registrator.
 
@@ -256,7 +256,7 @@ För att slutföra den här lösningen:
 
 - Köp ett domän namn och se till att du har åtkomst till DNS-registret för domän leverantören.
 
-Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för azure/Microsoft 365/external DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 - Registrera en anpassad domän med en offentlig registrator.
 
@@ -533,7 +533,7 @@ På sidan webb program väljer du **SL-inställningar**. I **Endast HTTPS** väl
 
 ![Använda HTTPS](media/solution-deployment-guide-geo-distributed/image43.png)
 
-När åtgärden har slutförts går du till någon av de HTTP-URL: er som pekar på appen. Exempel:
+När åtgärden har slutförts går du till någon av de HTTP-URL: er som pekar på appen. Ett exempel:
 
 - https://<app_name>. azurewebsites.net
 - `https://northwindcloud.com`

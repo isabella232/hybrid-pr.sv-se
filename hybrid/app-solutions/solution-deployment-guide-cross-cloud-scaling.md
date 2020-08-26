@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477345"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886823"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Distribuera en app som skalar över molnet med Azure och Azure Stack hubb
 
@@ -40,7 +40,7 @@ I den här lösningen skapar du en exempel miljö för att:
 - En Azure-prenumeration. Om det behövs kan du skapa ett [kostnads fritt konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) innan du börjar.
 - Ett Azure Stack hubb integrerat system eller distribution av Azure Stack Development Kit (ASDK).
   - Anvisningar om hur du installerar Azure Stack Hub finns i [Installera ASDK](/azure-stack/asdk/asdk-install.md).
-  - För ett Automation-skript för ASDK efter distribution går du till:[https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
+  - För ett Automation-skript för ASDK efter distribution går du till: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Den här installationen kan ta några timmar att slutföra.
 - Distribuera [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) PaaS-tjänster till Azure Stack Hub.
 - [Skapa planer/erbjudanden](/azure-stack/operator/service-plan-offer-subscription-overview.md) i Azure Stack Hub-miljön.
@@ -68,7 +68,7 @@ Lösningen över molnet säkerställer sömlös hantering och välbekant gränss
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Hämta en anpassad domän och konfigurera DNS
 
-Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för Azure/Office 365/externa DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet för det anpassade domän namnet. Använd [Azure DNS](/azure/dns/dns-getstarted-portal) för azure/Microsoft 365/external DNS-poster i Azure eller Lägg till DNS-posten på [en annan DNS-registrator](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 1. Registrera en anpassad domän med en offentlig registrator.
 2. Logga in hos domännamnsregistratorn för domänen. En godkänd administratör kan krävas för att göra DNS-uppdateringar.
