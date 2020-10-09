@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: def9abaa2a7231648f11453f66119399be015a4d
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477277"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852515"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Distribuera en MongoDB-lösning med hög tillgänglighet till Azure och Azure Stack hubb
 
@@ -105,5 +105,5 @@ Docker-avbildningar för varje distribution eliminerar beroende problem mellan o
 ## <a name="next-steps"></a>Nästa steg
 
 - Om du har aktiverat den virtuella hopp rutan i DR Azure Stack Hub kan du ansluta via SSH och interagera med MongoDB-klustret genom att installera Mongo CLI. Mer information om hur du interagerar med MongoDB finns i [Mongo-gränssnittet](https://docs.mongodb.com/manual/mongo/).
-- Mer information om hybrid molnappar finns i [hybrid moln lösningar.](https://aka.ms/azsdevtutorials)
+- Mer information om hybrid molnappar finns i [hybrid moln lösningar.](/azure-stack/user/)
 - Ändra koden till det här exemplet på [GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).
