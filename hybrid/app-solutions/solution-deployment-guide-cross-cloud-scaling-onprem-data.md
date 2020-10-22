@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
+ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477328"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92353486"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Distribuera en hybrid app med lokala data som skalar över molnet
 
@@ -37,7 +37,7 @@ Den här självstudien omfattar följande uppgifter:
 > - Konfigurera automatisk trafik växling mellan Global Azure och Azure Stack Hub.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram över hybrid pelare](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub är ett tillägg till Azure. Azure Stack Hub ger flexibilitet och innovation av molnbaserad data behandling till din lokala miljö, vilket möjliggör det enda hybrid molnet som gör det möjligt att bygga och distribuera hybrid program var som helst.  
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
@@ -51,7 +51,7 @@ Den här självstudien förutsätter att du har grundläggande kunskaper om Glob
 
 Den här kursen förutsätter också att du har en Azure-prenumeration. Om du inte har någon prenumeration kan du [skapa ett kostnads fritt konto](https://azure.microsoft.com/free/) innan du börjar.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Innan du startar den här lösningen ser du till att du uppfyller följande krav:
 
@@ -153,7 +153,7 @@ För att tillhandahålla anslutning mellan webb klient delen i Azure och SQL Ser
 
 Den virtuella Nätverksgatewayen på Azure-sidan av hybrid nätverket måste tillåta punkt-till-plats-anslutningar för att kunna integreras med Azure App Service.
 
-1. Gå till sidan virtuell nätverksgateway i Azure. Under **Inställningar**väljer **du punkt-till-plats-konfiguration**.
+1. Gå till sidan för virtuell nätverksgateway i Azure Portal. Under **Inställningar**väljer **du punkt-till-plats-konfiguration**.
 
     ![Alternativet punkt-till-plats i Azure Virtual Network Gateway](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -192,7 +192,7 @@ Mer information om hur App Service integreras med Azure virtuella nätverk finns
 
 Den lokala Nätverksgatewayen i Azure Stack hubbens virtuella nätverk måste konfigureras för att dirigera trafik från App Service punkt-till-plats-adress intervall.
 
-1. I Azure Stack hubb går du till **lokal nätverksgateway**. Under **Inställningar** väljer du **Konfiguration**.
+1. I Azure Stack Hub-portalen går du till **lokal nätverksgateway**. Under **Inställningar** väljer du **Konfiguration**.
 
     ![Konfigurations alternativ för gateway i Azure Stack hubb lokal nätverksgateway](media/solution-deployment-guide-hybrid/image14.png)
 
@@ -238,13 +238,13 @@ Så här lägger du till SSL i Azure:
 
 1. Kontrol lera att SSL-certifikatet som du får är giltigt för den under domän som du skapade. (Det är OK att använda certifikat med jokertecken.)
 
-2. I Azure följer du anvisningarna i avsnittet **förbereda din webbapp** och **binder ditt SSL-certifikat** i avsnittet [BIND ett befintligt anpassat ssl-certifikat till Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) -artikeln. Välj **SNI-baserad SSL** som **SSL-typ**.
+2. Följ anvisningarna i avsnittet **förbereda din webbapp** och **BIND SSL-certifikat** i avsnittet [BIND ett befintligt anpassat ssl-certifikat till Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) artikeln i Azure Portal. Välj **SNI-baserad SSL** som **SSL-typ**.
 
-3. Omdirigera all trafik till HTTPS-porten. Följ instruktionerna i avsnittet om att **använda https** i avsnittet [BIND ett befintligt anpassat SSL-certifikat till Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) .
+3. Omdirigera all trafik till HTTPS-porten. Följ instruktionerna i avsnittet om att   **använda https** i avsnittet [BIND ett befintligt anpassat SSL-certifikat till Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) .
 
 Så här lägger du till SSL till Azure Stack Hub:
 
-1. Upprepa steg 1-3 som du använde för Azure.
+1. Upprepa steg 1-3 som du använde för Azure med hjälp av Azure Stack Hub-portalen.
 
 ## <a name="configure-and-deploy-the-web-app"></a>Konfigurera och distribuera webbappen
 
@@ -300,7 +300,7 @@ När du skapar en webbapp i en App Services miljö börjar den med en instans. D
 
 ### <a name="enable-automatic-scale-out"></a>Aktivera automatisk utskalning
 
-1. I Azure, letar du upp App Service plan för de platser som du vill skala ut och väljer sedan **skala ut (App Service plan)**.
+1. I Azure Portal letar du reda på App Service plan för de platser som du vill skala ut och väljer sedan **skala ut (App Service plan)**.
 
     ![Skala ut Azure App Service](media/solution-deployment-guide-hybrid/image16.png)
 
@@ -327,7 +327,7 @@ När du skapar en webbapp i en App Services miljö börjar den med en instans. D
    - Ange **tröskelvärdet** till **50**.
    - Ange **varaktigheten** till **10**.
 
-#### <a name="action"></a>Action
+#### <a name="action"></a>Åtgärd
 
 1. Under **åtgärd**väljer du **öka antalet efter**.
 
@@ -361,7 +361,7 @@ När trafiken minskar kan Azure-webbappen automatiskt minska antalet aktiva inst
    - Ange **tröskelvärdet** till **30**.
    - Ange **varaktigheten** till **10**.
 
-#### <a name="action"></a>Action
+#### <a name="action"></a>Åtgärd
 
 1. Under **åtgärd**väljer du **minska antalet efter**.
 
@@ -372,7 +372,7 @@ När trafiken minskar kan Azure-webbappen automatiskt minska antalet aktiva inst
 
 ## <a name="create-a-traffic-manager-profile-and-configure-cross-cloud-scaling"></a>Skapa en Traffic Manager profil och konfigurera skalning mellan moln
 
-Skapa en Traffic Manager-profil i Azure och konfigurera sedan slut punkter för att aktivera skalning över molnet.
+Skapa en Traffic Manager profil med hjälp av Azure Portal och konfigurera sedan slut punkter för att aktivera skalning över molnet.
 
 ### <a name="create-traffic-manager-profile"></a>Skapa Traffic Manager profil
 
@@ -413,7 +413,7 @@ Skapa en Traffic Manager-profil i Azure och konfigurera sedan slut punkter för 
 Du konfigurerar Azure-slutpunkten härnäst.
 
 1. På **Traffic Manager profil**väljer du **slut punkter**.
-2. Välj **+ Lägg till**.
+2. Välj **+Lägg till**.
 3. Använd följande inställningar för Azure på **Lägg till slut punkt**:
 
    - I **typ**väljer du **Azure-slutpunkt**.
@@ -430,15 +430,15 @@ När båda slut punkterna har kon figurer ATS visas de i **Traffic Manager profi
 
 ![Slut punkter i Traffic Managers profil](media/solution-deployment-guide-hybrid/image20.png)
 
-## <a name="set-up-application-insights-monitoring-and-alerting"></a>Konfigurera Application Insights övervakning och avisering
+## <a name="set-up-application-insights-monitoring-and-alerting-in-azure"></a>Konfigurera Application Insights övervakning och aviseringar i Azure
 
 Med Azure Application Insights kan du övervaka din app och skicka aviseringar baserat på de villkor som du konfigurerar. Några exempel är: appen är inte tillgänglig, har fel eller visar prestanda problem.
 
-Du ska använda Application Insights mått för att skapa aviseringar. När dessa aviseringar utlöses växlar webbappens instans automatiskt från Azure Stack hubb till Azure för att skala ut, och sedan tillbaka till Azure Stack Hub för att skala in.
+Du ska använda Azure Application Insights-mått för att skapa aviseringar. När dessa aviseringar utlöses växlar webbappens instans automatiskt från Azure Stack hubb till Azure för att skala ut, och sedan tillbaka till Azure Stack Hub för att skala in.
 
 ### <a name="create-an-alert-from-metrics"></a>Skapa en avisering utifrån mått
 
-Gå till resurs gruppen för den här självstudien och välj sedan Application Insights-instansen som ska öppnas **Application Insights**.
+I Azure Portal går du till resurs gruppen för den här självstudien och väljer Application Insights-instansen för att öppna **Application Insights**.
 
 ![Application Insights](media/solution-deployment-guide-hybrid/image21.png)
 
