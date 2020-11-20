@@ -1,8 +1,8 @@
-- name: Dokumentation om Azure Hybrid
+- name: Dokumentation om hybrid- och flermolnslösningar
   href: index.yml
 - name: Översikt
   items:
-    - name: Hybridmönster och lösningsexempel
+    - name: Mönster och lösningsexempel
       href: overview-patterns-solution-examples.md
 - name: Mönster
   items:
@@ -58,7 +58,7 @@
       href: 'https://aka.ms/edgetrainingdeploy'
 - name: Begrepp
   items:
-    - name: Designöverväganden för hybridappar
+    - name: Designöverväganden för appar
       href: overview-app-design-considerations.md
 - name: Relaterat
   items:
