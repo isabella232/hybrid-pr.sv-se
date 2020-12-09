@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
+ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477175"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901498"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Distribuera en AI-baserad lösning för identifiering av Footfall med Azure och Azure Stack hubb
 
@@ -26,12 +26,12 @@ I den här lösningen får du lära dig att:
 > - Använd Custom Vision AI dev kit för att göra en härledning på gränsen.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram över hybrid pelare](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub är ett tillägg till Azure. Azure Stack Hub ger flexibilitet och innovation av molnbaserad data behandling till din lokala miljö, vilket möjliggör det enda hybrid molnet som gör det möjligt att bygga och distribuera hybrid program var som helst.  
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Innan du börjar med den här distributions guiden kontrollerar du att:
 
@@ -44,7 +44,7 @@ Innan du börjar med den här distributions guiden kontrollerar du att:
 - Skapa två tjänst huvud namn i din katalog:
   - En som är konfigurerad för användning med Azure-resurser, med åtkomst i Azure-prenumerationens omfattning.
   - En konfiguration som ska användas med Azure Stack hubb resurser, med åtkomst till prenumerations omfånget Azure Stack Hub.
-  - Mer information om hur du skapar tjänstens huvud namn och hur du auktoriserar åtkomst finns i [använda en app-identitet för att få åtkomst till resurser](/azure-stack/operator/azure-stack-create-service-principals.md). Om du föredrar att använda Azure CLI kan du läsa [skapa ett Azure-tjänstens huvud namn med Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+  - Mer information om hur du skapar tjänstens huvud namn och hur du auktoriserar åtkomst finns i [använda en app-identitet för att få åtkomst till resurser](/azure-stack/operator/azure-stack-create-service-principals.md). Om du föredrar att använda Azure CLI kan du läsa [skapa ett Azure-tjänstens huvud namn med Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Distribuera Azure Cognitive Services i Azure eller Azure Stack Hub.
   - Börja med att [läsa mer om Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
   - Gå sedan till [Distribuera Azure Cognitive Services till Azure Stack Hub](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) för att distribuera Cognitive Services på Azure Stack Hub. Du måste först registrera dig för att få åtkomst till för hands versionen.
@@ -152,7 +152,7 @@ Använd Porter CLI för att generera en uppsättning autentiseringsuppgifter och
 
 Nu när data flödar till Azure Stream Analytics från kameran måste vi manuellt godkänna det för att kommunicera med Power BI.
 
-1. Från Azure Portal öppnar du **alla resurser**och * \[ yoursuffix \] -jobbet för process Footfall* .
+1. Från Azure Portal öppnar du **alla resurser** och *\[ yoursuffix \] -jobbet för process Footfall* .
 
 2. I avsnittet **Jobbtopologi** i Stream Analytics-jobbfönstret väljer du alternativet **Utdata**.
 
@@ -194,5 +194,5 @@ porter uninstall footfall-camera –tag intelligentedge/footfall-camera-deployme
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Läs mer om [design överväganden för Hybrid appar]. (overview-app-design-considerations.md)
+- Läs mer om [design överväganden för Hybrid appar](overview-app-design-considerations.md)
 - Granska och föreslå förbättringar av [koden för det här exemplet på GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/footfall-analysis).

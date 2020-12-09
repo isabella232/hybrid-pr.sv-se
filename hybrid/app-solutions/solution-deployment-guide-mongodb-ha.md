@@ -7,14 +7,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: def9abaa2a7231648f11453f66119399be015a4d
-ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
+ms.openlocfilehash: 624f032def509d8e42d55807d72176e5fce85910
+ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91852515"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901515"
 ---
-# <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Distribuera en MongoDB-lösning med hög tillgänglighet till Azure och Azure Stack hubb
+# <a name="deploy-a-highly-available-mongodb-solution-across-two-azure-stack-hub-environments"></a>Distribuera en MongoDB-lösning med hög tillgänglighet i två miljöer för Azure Stack hubb
 
 Den här artikeln går igenom en automatiserad distribution av ett MongoDB-kluster med hög tillgänglighet (HA) med en katastrof återställning (DR) på två Azure Stack Hubbs miljöer. Mer information om MongoDB och hög tillgänglighet finns i [replik uppsättnings medlemmar](https://docs.mongodb.com/manual/core/replica-set-members/).
 
