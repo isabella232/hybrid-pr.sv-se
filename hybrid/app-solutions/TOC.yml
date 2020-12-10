@@ -26,6 +26,8 @@
           href: pattern-cross-cloud-scale-onprem-data.md
         - name: Fotstegsidentifiering (detaljhandel)
           href: pattern-retail-footfall-detection.md
+        - name: Kubernetes-kluster med hög tillgänglighet
+          href: pattern-highly-available-kubernetes.md
         - name: Identifiering av ej lagerförda varor på gränsen
           href: pattern-out-of-stock-at-edge.md
 - name: Guider för lösningsdistribution
@@ -40,6 +42,8 @@
       href: solution-deployment-guide-retail-footfall-detection.md
     - name: Geo-distribuerad app
       href: solution-deployment-guide-geo-distributed.md
+    - name: Kubernetes-kluster med hög tillgänglighet
+      href: solution-deployment-guide-highly-available-kubernetes.md
     - name: Hybridanslutning
       href: solution-deployment-guide-connectivity.md
     - name: Hybrididentitet
