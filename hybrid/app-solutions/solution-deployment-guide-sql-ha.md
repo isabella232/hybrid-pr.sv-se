@@ -7,14 +7,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
-ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
+ms.openlocfilehash: 0f857515a44ece7f967ade3dee8f493481709851
+ms.sourcegitcommit: c890f2c5e5e5f9f93c921f02dd1a6ca5026d5289
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91852481"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091810"
 ---
-# <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Distribuera en SQL Server 2016-tillgänglighets grupp till Azure och Azure Stack Hub
+# <a name="deploy-a-sql-server-2016-availability-group-across-two-azure-stack-hub-environments"></a>Distribuera en SQL Server 2016-tillgänglighets grupp över två Azure Stack Hub-miljöer
 
 I den här artikeln får du stegvisa anvisningar genom en automatiserad distribution av ett grundläggande (HA) SQL Server 2016 Enterprise-kluster med en asynkron haveri beredskap (DR) i två Azure Stack Hub-miljöer. Mer information om SQL Server 2016 och hög tillgänglighet finns i [Always on-tillgänglighets grupper: en lösning för hög tillgänglighet och katastrof återställning](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
 
