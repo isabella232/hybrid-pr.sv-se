@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 03/09/2021
-  ms.openlocfilehash: 218f52c27dee54dd4265a9c1eebc6de330bd6154
-  ms.sourcegitcommit: a5851a7351c39249a58da8d0cf121bbf0b306dca
+  ms.openlocfilehash: 59508b4cce80dd3a18a3e36feef6690290e26168
+  ms.sourcegitcommit: 25bfa6f85c1295ecbaf24e812ccebf1b7220bef8
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 03/10/2021
-  ms.locfileid: "102606201"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103600666"
 highlightedContent:
   items:
   - title: 'Antändning 2021: hybrid sessioner'
@@ -336,12 +336,16 @@ additionalContent:
       links:
       - url: /learn/modules/align-requirements-in-azure/
         text: Hitta rätt molntyper och tjänstmodeller i Azure för olika behov
+      - url: /azure/architecture/browse/?azure_categories=hybrid
+        text: Azure-hybridarkitektur
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Hybridfunktioner i Azure
       - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
         text: Virtuellt Azure-hybridevenemang
+      - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
+        text: Ramverk för moln införande – scenario för Hybrid-och multimoln
       - url: /learn/modules/intro-to-azure-hybrid-services/
-        text: Introduktion till Azure-hybridmoln
+        text: Introduktion till Azure Hybrid-molntjänster
       - url: https://events.microsoft.com/
         text: Microsoft Events-katalog
       - url: /learn
@@ -350,6 +354,10 @@ additionalContent:
       links:
       - url: /learn/modules/azure-sentinel-deploy-configure/
         text: Distribuera Azure Sentinel och ansluta datakällor
+      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+        text: Gör hybridtjänster tillgängliga på ett säkert sätt med Azure Relay
+      - url: /learn/modules/implement-manage-hybrid-identity/
+        text: Implementera och hantera hybrid identitet
       - url: /learn/modules/implement-hybrid-identity-windows-server/
         text: Implementera hybrididentitet med Windows Server
       - url: /learn/modules/intro-to-azure-sentinel/
@@ -358,16 +366,18 @@ additionalContent:
         text: Hantering, övervakning och säkerhet i Windows Server-hybridmoln
     - title: Hantering
       links:
-      - url: https://github.com/likamrat/azure_arc
+      - url: https://azurearcjumpstart.io/
         text: Kom igång-guider för Azure Arc
-      - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
-        text: Strategier för hög tillgänglighet och haveriberedskap
-      - url: /learn/modules/explore-iaas-paas-platform-tools-for-high-availability-disaster-recovery/
-        text: IaaS- och PaaS-plattformsverktyg för hög tillgänglighet och katastrofåterställning
+      - url: /learn/browse/?terms=%22%20Arc%20%22
+        text: Azure-båge, lär dig moduler
+      - url: /describe-high-availability-disaster-recovery-strategies/
+        text: Beskriv hög tillgänglighet och katastrof återställnings strategier
+      - url: /learn/browse/?terms="disaster%20recovery"
+        text: Läs om haveri beredskap
+      - url: /learn/browse/?terms="high%20availability"
+        text: Lära sig moduler med hög tillgänglighet
       - url: /learn/modules/intro-to-azure-arc/
         text: Introduktion till Azure Arc
-      - url: /learn/modules/manage-hybrid-workloads-azure-arc/
-        text: Hantera hybridarbetsbelastningar med Azure Arc
       - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
         text: Övervaka virtuella Windows Server IaaS-datorer och hybridinstanser
       - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
@@ -388,20 +398,6 @@ additionalContent:
         text: Implementera hybridsäkerhetskopiering och -återställning med Windows Server
   - title: Ytterligare resurser
     items:
-    - title: Utvecklare
-      links:
-      - url: /azure/developer/
-        text: Utvecklardokument och verktyg för Azure
-      - url: /azure/architecture/browse/?azure_categories=hybrid
-        text: Azure-hybridarkitektur
-      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
-        text: Azure IoT-verktyg för Visual Studio Code
-      - url: /samples/browse/
-        text: Kodexempelutforskare
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Vision AI Developer Kit
-      - url: /visualstudio/azure/
-        text: Visual Studio Azure-utveckling
     - title: Allmänt
       links:
       - url: https://azure.microsoft.com/blog/topics/hybrid/
@@ -412,7 +408,7 @@ additionalContent:
         text: Azure Stack Hub-kundlösningar
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: Kundberättelser om hybridmoln
-    - title: Hjälp + Support
+    - title: Support
       links:
       - url: https://azure.microsoft.com/support/options/
         text: Azure Support
@@ -422,3 +418,15 @@ additionalContent:
         text: Frågor och svar på Microsofts forum
       - url: https://stackoverflow.com/
         text: Stack Overflow
+    - title: Teknik
+      links:
+      - url: /azure/developer/
+        text: Utvecklardokument och verktyg för Azure
+      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+        text: Azure IoT-verktyg för Visual Studio Code
+      - url: /samples/browse/
+        text: Kodexempelutforskare
+      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+        text: Vision AI Developer Kit
+      - url: /visualstudio/azure/
+        text: Visual Studio Azure-utveckling
