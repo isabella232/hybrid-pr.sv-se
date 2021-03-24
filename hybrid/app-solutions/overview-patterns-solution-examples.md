@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ab0eb885e7b0fefaca8991522712652f979d8712
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911871"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895320"
 ---
 # <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Hybrid mönster och lösnings exempel för Azure och Azure Stack
 
@@ -40,7 +40,7 @@ Det finns två typer av mönster artiklar:
 - Enstaka mönster: ger design vägledning för ett enda allmänt syfte.
 - Multi-Pattern: ger design rikt linjer för hur du använder flera mönster. Det här mönstret krävs ofta för att lösa mer komplexa scenarier eller branschspecifika problem.
 
-## <a name="solution-deployment-guides"></a>Vägledning för lösnings distribution
+## <a name="solution-deployment-guides"></a>Guider för lösningsdistribution
 
 Steg för steg-distributions guider hjälper till att distribuera ett lösnings exempel. Guiden kan också referera till ett kod exempel för assistenten som lagras i [exempel lagrings platsen](https://github.com/Azure-Samples/azure-intelligent-edge-patterns)för GitHub-lösningar.
 
@@ -49,4 +49,4 @@ Steg för steg-distributions guider hjälper till att distribuera ett lösnings 
 - Se [Azure Stacks familj med produkter och lösningar](/azure-stack) för att lära dig mer om hela portföljen med produkter och lösningar.
 - Utforska avsnitten "mönster" och "lösnings distributions guider" i innehålls förteckningen om du vill veta mer om dem.
 - Läs om [design överväganden för Hybrid appar](overview-app-design-considerations.md) om du vill läsa mer om program varu kvalitet för att utforma, distribuera och driva hybrid program.
-- [Konfigurera en utvecklings miljö på Azure Stack](/azure-stack/user/azure-stack-dev-start.md) och [distribuera din första app](/azure-stack/user/azure-stack-dev-start-deploy-app.md) på Azure Stack.
+- [Konfigurera en utvecklings miljö på Azure Stack](/azure-stack/user/azure-stack-dev-start) och [distribuera din första app](/azure-stack/user/azure-stack-dev-start-deploy-app) på Azure Stack.

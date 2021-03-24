@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
-ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
+ms.openlocfilehash: 0989859fd68847932d3e69defee59740a2bffd44
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92353486"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895405"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Distribuera en hybrid app med lokala data som skalar över molnet
 
@@ -47,15 +47,15 @@ Den här självstudien omfattar följande uppgifter:
 Den här självstudien förutsätter att du har grundläggande kunskaper om Global Azure och Azure Stack Hub. Om du vill veta mer innan du startar självstudien kan du läsa följande artiklar:
 
 - [Introduktion till Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Viktiga begrepp för Azure Stack hubb](/azure-stack/operator/azure-stack-overview.md)
+- [Viktiga begrepp för Azure Stack hubb](/azure-stack/operator/azure-stack-overview)
 
 Den här kursen förutsätter också att du har en Azure-prenumeration. Om du inte har någon prenumeration kan du [skapa ett kostnads fritt konto](https://azure.microsoft.com/free/) innan du börjar.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du startar den här lösningen ser du till att du uppfyller följande krav:
 
-- En Azure Stack Development Kit (ASDK) eller en prenumeration på ett integrerat system för Azure Stack Hub. Om du vill distribuera ASDK följer du anvisningarna i [distribuera ASDK med installations programmet](/azure-stack/asdk/asdk-install.md).
+- En Azure Stack Development Kit (ASDK) eller en prenumeration på ett integrerat system för Azure Stack Hub. Om du vill distribuera ASDK följer du anvisningarna i [distribuera ASDK med installations programmet](/azure-stack/asdk/asdk-install).
 - Installationen av Azure Stack Hub måste ha följande installerat:
   - Azure App Service. Arbeta med din Azure Stack Hub-operatör för att distribuera och konfigurera Azure App Service i din miljö. Den här självstudien kräver att App Service har minst en (1) tillgänglig dedikerad arbets roll.
   - En Windows Server 2016-avbildning.
@@ -72,17 +72,17 @@ Innan du startar den här lösningen ser du till att du uppfyller följande krav
 
 1. Logga in på användar portalen för Azure Stack Hub.
 
-2. Välj **Marketplace**på **instrument panelen**.
+2. Välj **Marketplace** på **instrument panelen**.
 
     ![Azure Stack Hub Marketplace](media/solution-deployment-guide-hybrid/image1.png)
 
-3. Välj **Compute**i **Marketplace**och välj sedan **mer**. Under **mer**väljer du den **kostnads fria SQL Server licensen: SQL Server 2017 Developer på Windows Server** -avbildning.
+3. Välj **Compute** i **Marketplace** och välj sedan **mer**. Under **mer** väljer du den **kostnads fria SQL Server licensen: SQL Server 2017 Developer på Windows Server** -avbildning.
 
     ![Välj en avbildning av en virtuell dator i Azure Stack hubb användar portalen](media/solution-deployment-guide-hybrid/image2.png)
 
 4. På **licens för gratis SQL Server: SQL Server 2017-utvecklare på Windows Server**, Välj **skapa**.
 
-5. I **grundläggande > du konfigurera grundläggande inställningar**, ange ett **namn** för den virtuella datorn (VM), ett **användar namn** för SQL Server SA och ett **lösen ord** för säkerhets associationen.  I list rutan **prenumeration** väljer du den prenumeration som du distribuerar till. För **resurs grupp**använder du **Välj befintlig** och sätter den virtuella datorn i samma resurs grupp som din Azure Stack hubb-webbapp.
+5. I **grundläggande > du konfigurera grundläggande inställningar**, ange ett **namn** för den virtuella datorn (VM), ett **användar namn** för SQL Server SA och ett **lösen ord** för säkerhets associationen.  I list rutan **prenumeration** väljer du den prenumeration som du distribuerar till. För **resurs grupp** använder du **Välj befintlig** och sätter den virtuella datorn i samma resurs grupp som din Azure Stack hubb-webbapp.
 
     ![Konfigurera grundläggande inställningar för virtuell dator i Azure Stack hubb användar portalen](media/solution-deployment-guide-hybrid/image3.png)
 
@@ -104,11 +104,11 @@ Innan du startar den här lösningen ser du till att du uppfyller följande krav
 
      ![Konfigurera valfria VM-funktioner i Azure Stack hubb användar portalen](media/solution-deployment-guide-hybrid/image4.png)
 
-8. Under **SQL Server inställningar**konfigurerar du följande inställningar:
+8. Under **SQL Server inställningar** konfigurerar du följande inställningar:
 
    - Välj **offentlig (Internet)** för **SQL-anslutning**.
-   - Behåll standardvärdet **1433**för **port**.
-   - Välj **Aktivera**för **SQL-autentisering**.
+   - Behåll standardvärdet **1433** för **port**.
+   - Välj **Aktivera** för **SQL-autentisering**.
 
      > [!Note]  
      > När du aktiverar SQL-autentisering ska den automatiskt fyllas i med "SQLAdmin"-informationen som du konfigurerade i **grunderna**.
@@ -117,7 +117,7 @@ Innan du startar den här lösningen ser du till att du uppfyller följande krav
 
      ![Konfigurera SQL Server inställningar i Azure Stack hubb användar portalen](media/solution-deployment-guide-hybrid/image5.png)
 
-9. Vid **Sammanfattning**granskar du VM-konfigurationen och väljer sedan **OK** för att starta distributionen.
+9. Vid **Sammanfattning** granskar du VM-konfigurationen och väljer sedan **OK** för att starta distributionen.
 
     ![Konfigurations Sammanfattning i Azure Stack hubb användar portalen](media/solution-deployment-guide-hybrid/image6.png)
 
@@ -139,7 +139,7 @@ Azure App Service fören klar att köra och hantera en webbapp. Eftersom Azure S
 
 App Service på Azure Stack Hub måste dirigeras från det offentliga Internet för att användarna ska kunna komma åt din app. Om din Azure Stack hubb är tillgänglig från Internet noterar du den offentliga IP-adressen eller URL: en för den Azure Stack Hub-webbappen.
 
-Om du använder en ASDK kan du [Konfigurera en statisk NAT-mappning](/azure-stack/operator/azure-stack-create-vpn-connection-one-node.md#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) för att exponera App Service utanför den virtuella miljön.
+Om du använder en ASDK kan du [Konfigurera en statisk NAT-mappning](/azure-stack/operator/azure-stack-create-vpn-connection-one-node#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) för att exponera App Service utanför den virtuella miljön.
 
 ### <a name="connect-a-web-app-in-azure-to-a-hybrid-network"></a>Ansluta en webbapp i Azure till ett hybrid nätverk
 
@@ -153,7 +153,7 @@ För att tillhandahålla anslutning mellan webb klient delen i Azure och SQL Ser
 
 Den virtuella Nätverksgatewayen på Azure-sidan av hybrid nätverket måste tillåta punkt-till-plats-anslutningar för att kunna integreras med Azure App Service.
 
-1. Gå till sidan för virtuell nätverksgateway i Azure Portal. Under **Inställningar**väljer **du punkt-till-plats-konfiguration**.
+1. Gå till sidan för virtuell nätverksgateway i Azure Portal. Under **Inställningar** väljer **du punkt-till-plats-konfiguration**.
 
     ![Alternativet punkt-till-plats i Azure Virtual Network Gateway](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -166,7 +166,7 @@ Den virtuella Nätverksgatewayen på Azure-sidan av hybrid nätverket måste til
    > [!Note]  
    > Kontrol lera att det intervall som du anger inte överlappar något av adress intervallen som redan används av undernät i de globala Azure-eller Azure Stack Hub-komponenterna i hybrid nätverket.
 
-   Avmarkera **IKEV2 VPN**under **tunnel typ**. Välj **Spara** för att slutföra konfigurationen av punkt-till-plats.
+   Avmarkera **IKEV2 VPN** under **tunnel typ**. Välj **Spara** för att slutföra konfigurationen av punkt-till-plats.
 
    ![Punkt-till-plats-inställningar i Azure virtuell nätverksgateway](media/solution-deployment-guide-hybrid/image10.png)
 
@@ -174,11 +174,11 @@ Den virtuella Nätverksgatewayen på Azure-sidan av hybrid nätverket måste til
 
 1. Om du vill ansluta appen till Azure VNet följer du anvisningarna i [Gateway krävs VNet-integrering](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
 
-2. Gå till **Inställningar** för App Service plan som är värd för webbappen. I **Inställningar**väljer du **nätverk**.
+2. Gå till **Inställningar** för App Service plan som är värd för webbappen. I **Inställningar** väljer du **nätverk**.
 
     ![Konfigurera nätverk för App Service plan](media/solution-deployment-guide-hybrid/image11.png)
 
-3. I **VNet-integration**väljer **du klicka här för att hantera**.
+3. I **VNet-integration** väljer **du klicka här för att hantera**.
 
     ![Hantera VNET-integrering för App Service plan](media/solution-deployment-guide-hybrid/image12.png)
 
@@ -196,7 +196,7 @@ Den lokala Nätverksgatewayen i Azure Stack hubbens virtuella nätverk måste ko
 
     ![Konfigurations alternativ för gateway i Azure Stack hubb lokal nätverksgateway](media/solution-deployment-guide-hybrid/image14.png)
 
-2. I **adress utrymme**anger du punkt-till-plats-adressintervallet för den virtuella Nätverksgatewayen i Azure.
+2. I **adress utrymme** anger du punkt-till-plats-adressintervallet för den virtuella Nätverksgatewayen i Azure.
 
     ![Adress utrymme för punkt-till-plats i Azure Stack hubb lokal nätverksgateway](media/solution-deployment-guide-hybrid/image15.png)
 
@@ -267,7 +267,7 @@ Du kan använda App Service miljövariabler för att skicka en annan anslutnings
 
 1. Öppna appen i Visual Studio.
 
-2. Öppna Startup.cs och hitta följande kodblock:
+2. Öppna Start. CS och hitta följande kodblock:
 
     ```C#
     services.AddDbContext<MyDatabaseContext>(options =>
@@ -308,28 +308,28 @@ När du skapar en webbapp i en App Services miljö börjar den med en instans. D
 
     ![Aktivera autoskalning i Azure App Service](media/solution-deployment-guide-hybrid/image17.png)
 
-3. Ange ett namn för den **automatiska skalnings inställningen**. För **standard** regeln för automatisk skalning väljer du **skala baserat på ett mått**. Ange att **instans gränserna** ska vara **minst: 1**, **Max: 10**och **standard: 1**.
+3. Ange ett namn för den **automatiska skalnings inställningen**. För **standard** regeln för automatisk skalning väljer du **skala baserat på ett mått**. Ange att **instans gränserna** ska vara **minst: 1**, **Max: 10** och **standard: 1**.
 
     ![Konfigurera autoskalning i Azure App Service](media/solution-deployment-guide-hybrid/image18.png)
 
 4. Välj **+ Lägg till en regel**.
 
-5. I **mått källa**väljer du **aktuell resurs**. Använd följande kriterier och åtgärder för regeln.
+5. I **mått källa** väljer du **aktuell resurs**. Använd följande kriterier och åtgärder för regeln.
 
 #### <a name="criteria"></a>Kriterie
 
 1. Under **tids agg regering väljer du** **Average**.
 
-2. Under **Metric Name**väljer du **processor procent**.
+2. Under **Metric Name** väljer du **processor procent**.
 
-3. Under **operatör**väljer du **större än**.
+3. Under **operatör** väljer du **större än**.
 
    - Ange **tröskelvärdet** till **50**.
    - Ange **varaktigheten** till **10**.
 
-#### <a name="action"></a>Åtgärd
+#### <a name="action"></a>Action
 
-1. Under **åtgärd**väljer du **öka antalet efter**.
+1. Under **åtgärd** väljer du **öka antalet efter**.
 
 2. Ange **antalet instanser** till **2**.
 
@@ -339,7 +339,7 @@ När du skapar en webbapp i en App Services miljö börjar den med en instans. D
 
 5. Välj **+ Lägg till en regel**.
 
-6. I **mått källa**väljer du **aktuell resurs.**
+6. I **mått källa** väljer du **aktuell resurs.**
 
    > [!Note]  
    > Den aktuella resursen kommer att innehålla App Service plan namn/GUID och list rutorna **resurs typ** och **resurs** är inte tillgängliga.
@@ -354,16 +354,16 @@ När trafiken minskar kan Azure-webbappen automatiskt minska antalet aktiva inst
 
 1. Under **tids agg regering väljer du** **Average**.
 
-2. Under **Metric Name**väljer du **processor procent**.
+2. Under **Metric Name** väljer du **processor procent**.
 
-3. Under **operator**väljer du **mindre än**.
+3. Under **operator** väljer du **mindre än**.
 
    - Ange **tröskelvärdet** till **30**.
    - Ange **varaktigheten** till **10**.
 
-#### <a name="action"></a>Åtgärd
+#### <a name="action"></a>Action
 
-1. Under **åtgärd**väljer du **minska antalet efter**.
+1. Under **åtgärd** väljer du **minska antalet efter**.
 
    - Ange **antalet instanser** till **1**.
    - Ange **nedkylning** till **5**.
@@ -380,10 +380,10 @@ Skapa en Traffic Manager profil med hjälp av Azure Portal och konfigurera sedan
 2. Välj **Nätverk**.
 3. Välj **Traffic Manager profil** och konfigurera följande inställningar:
 
-   - I **namn**anger du ett namn för din profil. Det här namnet **måste** vara unikt i trafficmanager.net-zonen och används för att skapa ett nytt DNS-namn (till exempel northwindstore.trafficmanager.net).
-   - För **routningsmetod**väljer du **viktat**.
-   - För **prenumeration**väljer du den prenumeration som du vill skapa profilen i.
-   - I **resurs grupp**skapar du en ny resurs grupp för den här profilen.
+   - I **namn** anger du ett namn för din profil. Det här namnet **måste** vara unikt i trafficmanager.net-zonen och används för att skapa ett nytt DNS-namn (till exempel northwindstore.trafficmanager.net).
+   - För **routningsmetod** väljer du **viktat**.
+   - För **prenumeration** väljer du den prenumeration som du vill skapa profilen i.
+   - I **resurs grupp** skapar du en ny resurs grupp för den här profilen.
    - I **Resursgruppsplats** väljer du plats för resursgruppen. Den här inställningen refererar till platsen för resurs gruppen och påverkar inte den Traffic Manager profilen som distribueras globalt.
 
 4. Välj **Skapa**.
@@ -396,32 +396,32 @@ Skapa en Traffic Manager profil med hjälp av Azure Portal och konfigurera sedan
 
 1. Sök efter den Traffic Manager profil som du har skapat. Om du har navigerat till resurs gruppen för profilen väljer du profilen.
 
-2. I **Traffic Manager profil**väljer du **slut punkter**under **Inställningar**.
+2. I **Traffic Manager profil** väljer du **slut punkter** under **Inställningar**.
 
 3. Välj **Lägg till**.
 
-4. I **Lägg till slut punkt**använder du följande inställningar för Azure Stack Hub:
+4. I **Lägg till slut punkt** använder du följande inställningar för Azure Stack Hub:
 
-   - I **typ**väljer du **extern slut punkt**.
+   - I **typ** väljer du **extern slut punkt**.
    - Ange ett **namn** för slut punkten.
    - För **fullständigt kvalificerat domän namn (FQDN) eller IP-** adress anger du den externa URL: en för din Azure Stack Hub-webbapp.
-   - Behåll standardvärdet **1**för **vikt**. Den här vikten resulterar i all trafik som kommer till den här slut punkten om den är felfri.
+   - Behåll standardvärdet **1** för **vikt**. Den här vikten resulterar i all trafik som kommer till den här slut punkten om den är felfri.
    - Lämna **Lägg till som inaktiverat** avmarkerat.
 
 5. Välj **OK** för att spara Azure Stack Hub-slutpunkten.
 
 Du konfigurerar Azure-slutpunkten härnäst.
 
-1. På **Traffic Manager profil**väljer du **slut punkter**.
+1. På **Traffic Manager profil** väljer du **slut punkter**.
 2. Välj **+Lägg till**.
 3. Använd följande inställningar för Azure på **Lägg till slut punkt**:
 
-   - I **typ**väljer du **Azure-slutpunkt**.
+   - I **typ** väljer du **Azure-slutpunkt**.
    - Ange ett **namn** för slut punkten.
-   - För **mål resurs typ**väljer du **App Service**.
-   - För **mål resurs**väljer du **Välj en app service** om du vill visa en lista över Web Apps i samma prenumeration.
+   - För **mål resurs typ** väljer du **App Service**.
+   - För **mål resurs** väljer du **Välj en app service** om du vill visa en lista över Web Apps i samma prenumeration.
    - I **Resurs** väljer du den apptjänst som du vill lägga till som den första slutpunkten.
-   - I **vikt**väljer du **2**. Den här inställningen resulterar i all trafik som går till den här slut punkten om den primära slut punkten är ohälsosam eller om du har en regel/avisering som omdirigerar trafik när den utlöses.
+   - I **vikt** väljer du **2**. Den här inställningen resulterar i all trafik som går till den här slut punkten om den primära slut punkten är ohälsosam eller om du har en regel/avisering som omdirigerar trafik när den utlöses.
    - Lämna **Lägg till som inaktiverat** avmarkerat.
 
 4. Välj **OK** för att spara Azure-slutpunkten.
@@ -446,19 +446,19 @@ Du använder den här vyn för att skapa en skalbar avisering och en avisering o
 
 ### <a name="create-the-scale-out-alert"></a>Skapa en skalbar avisering
 
-1. Under **Konfigurera**väljer du **aviseringar (klassisk)**.
+1. Under **Konfigurera** väljer du **aviseringar (klassisk)**.
 2. Välj **Lägg till mått varning (klassisk)**.
 3. Konfigurera följande inställningar i **Lägg till regel**:
 
-   - I **namn**anger du **burst i Azure-molnet**.
+   - I **namn** anger du **burst i Azure-molnet**.
    - En **Beskrivning** är valfri.
-   - Under **käll**  >  **avisering på**väljer du **mått**.
-   - Under **kriterier**väljer du din prenumeration, resurs grupp för din Traffic Manager profil och namnet på den Traffic Manager profilen för resursen.
+   - Under **käll**  >  **avisering på** väljer du **mått**.
+   - Under **kriterier** väljer du din prenumeration, resurs grupp för din Traffic Manager profil och namnet på den Traffic Manager profilen för resursen.
 
-4. För **mått**väljer du **begär ande frekvens**.
-5. För **villkor**väljer du **större än**.
-6. För **tröskel**anger du **2**.
-7. För **period**väljer **du de senaste 5 minuterna**.
+4. För **mått** väljer du **begär ande frekvens**.
+5. För **villkor** väljer du **större än**.
+6. För **tröskel** anger du **2**.
+7. För **period** väljer **du de senaste 5 minuterna**.
 8. Under **meddela via**:
    - Markera kryss rutan för **e-postägare, deltagare och läsare**.
    - Ange din e-postadress för **ytterligare administratörs-e-post (er)**.
@@ -467,19 +467,19 @@ Du använder den här vyn för att skapa en skalbar avisering och en avisering o
 
 ### <a name="create-the-scale-in-alert"></a>Skapa en skalnings avisering
 
-1. Under **Konfigurera**väljer du **aviseringar (klassisk)**.
+1. Under **Konfigurera** väljer du **aviseringar (klassisk)**.
 2. Välj **Lägg till mått varning (klassisk)**.
 3. Konfigurera följande inställningar i **Lägg till regel**:
 
-   - I **namn**anger du **skala tillbaka till Azure Stack Hub**.
+   - I **namn** anger du **skala tillbaka till Azure Stack Hub**.
    - En **Beskrivning** är valfri.
-   - Under **käll**  >  **avisering på**väljer du **mått**.
-   - Under **kriterier**väljer du din prenumeration, resurs grupp för din Traffic Manager profil och namnet på den Traffic Manager profilen för resursen.
+   - Under **käll**  >  **avisering på** väljer du **mått**.
+   - Under **kriterier** väljer du din prenumeration, resurs grupp för din Traffic Manager profil och namnet på den Traffic Manager profilen för resursen.
 
-4. För **mått**väljer du **begär ande frekvens**.
-5. För **villkor**väljer du **mindre än**.
-6. För **tröskel**anger du **2**.
-7. För **period**väljer **du de senaste 5 minuterna**.
+4. För **mått** väljer du **begär ande frekvens**.
+5. För **villkor** väljer du **mindre än**.
+6. För **tröskel** anger du **2**.
+7. För **period** väljer **du de senaste 5 minuterna**.
 8. Under **meddela via**:
    - Markera kryss rutan för **e-postägare, deltagare och läsare**.
    - Ange din e-postadress för **ytterligare administratörs-e-post (er)**.
@@ -504,12 +504,12 @@ När webbplatsen når tröskelvärdena som du konfigurerar får du en avisering.
 
 2. Välj **slut punkter**.
 3. Välj **Azure-slutpunkten**.
-4. Under **status**väljer du **aktive rad**och väljer sedan **Spara**.
+4. Under **status** väljer du **aktive rad** och väljer sedan **Spara**.
 
     ![Aktivera Azure-slutpunkten i Azure Portal](media/solution-deployment-guide-hybrid/image23.png)
 
 5. I **slut punkter** för Traffic Manager profilen väljer du **extern slut punkt**.
-6. Under **status**väljer du **inaktive rad**och väljer sedan **Spara**.
+6. Under **status** väljer du **inaktive rad** och väljer sedan **Spara**.
 
     ![Inaktivera Azure Stack Hub-slutpunkten i Azure Portal](media/solution-deployment-guide-hybrid/image24.png)
 

@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 0bf07bb38537f530a0adb3569c43d53af13b8d56
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84912003"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895337"
 ---
 # <a name="footfall-detection-pattern"></a>Mönster för Footfall-identifiering
 
@@ -44,14 +44,14 @@ Här är en sammanfattning av hur lösningen fungerar:
 
 Den här lösningen använder följande komponenter:
 
-| Lager | Komponent | Description |
+| Skikt | Komponent | Beskrivning |
 |----------|-----------|-------------|
 | Maskin vara i butiken | [Custom Vision AI dev kit](https://azure.github.io/Vision-AI-DevKit-Pages/) | Tillhandahåller filtrering i butiken med hjälp av en lokal ML-modell som bara fångar bilder av personer för analys. Säkert etablerade och uppdaterade via IoT Hub.<br><br>|
 | Azure | [Azure Event Hubs](/azure/event-hubs/) | Azure Event Hubs ger en skalbar plattform för att mata in anonymiserats-data som kan integreras snyggt med Azure Stream Analytics. |
 |  | [Azure Stream Analytics](/azure/stream-analytics/) | Ett Azure Stream Analytics jobb sammanställer anonymiserats-data och grupperar dem till 15-sekunders fönster för visualisering. |
 |  | [Microsoft Power BI](https://powerbi.microsoft.com/) | Power BI tillhandahåller ett lättanvänt instrument panels gränssnitt för visning av utdata från Azure Stream Analytics. |
-| Azure Stack hubb | [App Service](/azure-stack/operator/azure-stack-app-service-overview.md) | App Service Resource Provider (RP) tillhandahåller en bas för Edge-komponenter, inklusive värd-och hanterings funktioner för webbappar/API: er och funktioner. |
-| | Azure Kubernetes service [(AKS)-motor](https://github.com/Azure/aks-engine) kluster | AKS RP med AKS-Engine-kluster som distribueras till Azure Stack Hub ger en skalbar, elastisk motor för att köra Ansikts-API containern. |
+| Azure Stack Hub | [App Service](/azure-stack/operator/azure-stack-app-service-overview) | App Service Resource Provider (RP) tillhandahåller en bas för Edge-komponenter, inklusive värd-och hanterings funktioner för webbappar/API: er och funktioner. |
+| | Azure Kubernetes service [(AKS)-motor](https://github.com/Azure/aks-engine) kluster | AKS RP med AKS-Engine-kluster som distribuerats till Azure Stack Hub ger en skalbar, elastisk motor för att köra Ansikts-API containern. |
 | | [Ansikts-API behållare](/azure/cognitive-services/face/face-how-to-install-containers) för Azure Cognitive Services| Azure Cognitive Services RP med Ansikts-API-behållare tillhandahåller demografisk, känslo och unik identifiering av besökare i Contosos privata nätverk. |
 | | Blob Storage | Bilder som har hämtats från AI dev kit överförs till Azure Stack hubbens Blob Storage. |
 | | Azure Functions | En Azure-funktion som körs på Azure Stack hub tar emot indata från Blob Storage och hanterar interaktioner med Ansikts-API. Den avger anonymiserats-data till ett Event Hubs-kluster som finns i Azure.<br><br>|

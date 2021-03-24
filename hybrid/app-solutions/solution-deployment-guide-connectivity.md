@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 4480f51b03082f2a0cbb7f2f213e05b7bf488646
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477294"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895388"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Konfigurera hybrid moln anslutning med Azure och Azure Stack hubb
 
@@ -25,7 +25,7 @@ I den här lösningen skapar du en exempel miljö för att:
 > - Underhålla ett äldre system när du använder Cloud-skalad app-distribution och resurser i globala Azure.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram över hybrid pelare](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub är ett tillägg till Azure. Azure Stack Hub ger flexibilitet och innovation av molnbaserad data behandling till din lokala miljö, vilket möjliggör det enda hybrid molnet som gör det möjligt att bygga och distribuera hybrid program var som helst.  
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
@@ -36,8 +36,8 @@ Några komponenter krävs för att bygga en distribution av hybrid anslutningar.
 
 ### <a name="azure"></a>Azure
 
-- Om du inte har någon Azure-prenumeration kan du [skapa ett kostnadsfritt konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) innan du börjar.
-- Skapa en [webbapp](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) i Azure. Anteckna webbappens webb adress eftersom du behöver den i lösningen.
+- Om du inte har någon Azure-prenumeration kan du skapa ett [kostnadsfritt konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) innan du börjar.
+- Skapa en [webbapp](/aspnet/core/tutorials/publish-to-azure-webapp-using-vs) i Azure. Anteckna webbappens webb adress eftersom du behöver den i lösningen.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -47,9 +47,9 @@ En Azure OEM/maskin varu partner kan distribuera en produktions Azure Stack hubb
    >[!Note]
    >Det kan ta upp till 7 timmar att distribuera ASDK, så du bör planera detta.
 
-- Distribuera [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) PaaS-tjänster till Azure Stack Hub.
-- [Skapa planer och erbjudanden](/azure-stack/operator/service-plan-offer-subscription-overview.md) i Azure Stack Hub-miljön.
-- [Skapa klient prenumeration](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) i Azure Stack Hub-miljön.
+- Distribuera [App Service](/azure-stack/operator/azure-stack-app-service-deploy) PaaS-tjänster till Azure Stack Hub.
+- [Skapa planer och erbjudanden](/azure-stack/operator/service-plan-offer-subscription-overview) i Azure Stack Hub-miljön.
+- [Skapa klient prenumeration](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) i Azure Stack Hub-miljön.
 
 ### <a name="azure-stack-hub-components"></a>Azure Stack Hub-komponenter
 
@@ -58,7 +58,7 @@ En Azure Stack Hub-operatör måste distribuera App Service, skapa planer och er
 I det här lösnings exemplet förutsätts att du har några grundläggande kunskaper om Azure och Azure Stack Hub. Läs följande artiklar om du vill veta mer innan du påbörjar lösningen:
 
 - [Introduktion till Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Viktiga begrepp för Azure Stack hubb](/azure-stack/operator/azure-stack-overview.md)
+- [Viktiga begrepp för Azure Stack hubb](/azure-stack/operator/azure-stack-overview)
 
 ### <a name="before-you-begin"></a>Innan du börjar
 
@@ -80,7 +80,7 @@ Specifikationer för anslutning:
 - **Azure Stack hubb anslutningens namn**: AzureStack-Gateway – Azure-S2SGateway (portalen fylls i det här värdet)
 - **Delad nyckel**: alla kompatibla med VPN-maskinvara, med matchande värden på båda sidor om anslutning
 - **Prenumeration**: valfri prioriterad prenumeration
-- **Resurs grupp**: test-infrarött
+- **Resurs grupp**: Test-Infra
 
 IP-adresser för nätverk och undernät:
 
@@ -91,10 +91,10 @@ IP-adresser för nätverk och undernät:
 | Azure Stack hubb vNet | ApplicationvNet<br>10.100.100.0/23 | ApplicationSubnet <br>10.100.100.0/24 |  |
 |  |  | GatewaySubnet <br>10.100101.0/24 |  |
 | Azure Virtual Network Gateway | Azure-Gateway |  |  |
-| Azure Stack hubb Virtual Network Gateway | AzureStack – Gateway |  |  |
-| Offentlig Azure-IP | Azure-GatewayPublicIP |  | Bestäms vid skapande |
-| Azure Stack hubb offentlig IP | AzureStack – GatewayPublicIP |  | Bestäms vid skapande |
-| Azure lokal nätverksgateway | AzureStack – S2SGateway<br>   10.100.100.0/23 |  | Azure Stack Hub offentlig IP-värde |
+| Azure Stack hubb Virtual Network Gateway | AzureStack-Gateway |  |  |
+| Azure Public IP | Azure-GatewayPublicIP |  | Bestäms vid skapande |
+| Azure Stack hubb offentlig IP | AzureStack-GatewayPublicIP |  | Bestäms vid skapande |
+| Azure lokal nätverksgateway | AzureStack-S2SGateway<br>   10.100.100.0/23 |  | Azure Stack Hub offentlig IP-värde |
 | Azure Stack hubb lokal nätverksgateway | Azure-S2SGateway<br>10.100.102.0/23 |  | Offentligt IP-värde för Azure |
 
 ## <a name="create-a-virtual-network-in-global-azure-and-azure-stack-hub"></a>Skapa ett virtuellt nätverk i Global Azure och Azure Stack hubb
@@ -108,7 +108,7 @@ Så här skapar du ett vNet i Azure:
 
 1. Använd webbläsaren för att ansluta till [Azure Portal](https://portal.azure.com/) och logga in med ditt Azure-konto.
 2. Välj **Skapa en resurs**. I fältet **Sök på Marketplace anger du** ' Virtual Network '. Välj **virtuellt nätverk** från resultaten.
-3. I listan **Välj en distributions modell** väljer du **Resource Manager**och väljer sedan **skapa**.
+3. I listan **Välj en distributions modell** väljer du **Resource Manager** och väljer sedan **skapa**.
 4. Konfigurera VNet-inställningarna på **Skapa virtuellt nätverk**. De obligatoriska fält namnen föregås av en röd asterisk.  När du anger ett giltigt värde ändras asterisken till en grön bock markering.
 
 Så här skapar du ett vNet i Azure Stack Hub:
@@ -122,7 +122,7 @@ Innan du ansluter det virtuella nätverket till en gateway måste du skapa Gatew
 I [Azure Portal](https://portal.azure.com/)navigerar du till det virtuella Resource Manager-nätverket där du vill skapa en virtuell nätverksgateway.
 
 1. Välj det virtuella nätverket för att öppna sidan **virtuellt nätverk** .
-2. I **Inställningar**väljer du **undernät**.
+2. I **Inställningar** väljer du **undernät**.
 3. På sidan **undernät** väljer du **+ Gateway-undernät** för att öppna sidan **Lägg till undernät** .
 
     ![Lägg till gateway-undernät](media/solution-deployment-guide-connectivity/image4.png)
@@ -135,16 +135,16 @@ I [Azure Portal](https://portal.azure.com/)navigerar du till det virtuella Resou
 Använd följande steg för att skapa en virtuell nätverksgateway i Azure.
 
 1. På vänster sida av Portal sidan väljer du **+** och anger "virtuell nätverksgateway" i Sök fältet.
-2. I **resultat**väljer du **virtuell nätverksgateway**.
-3. I **virtuell nätverksgateway**väljer du **skapa** för att öppna sidan **Skapa virtuell nätverksgateway** .
-4. På **Skapa virtuell nätverksgateway**anger du värdena för din nätverksgateway med hjälp av våra **exempel värden för självstudie**. Inkludera följande ytterligare värden:
+2. I **resultat** väljer du **virtuell nätverksgateway**.
+3. I **virtuell nätverksgateway** väljer du **skapa** för att öppna sidan **Skapa virtuell nätverksgateway** .
+4. På **Skapa virtuell nätverksgateway** anger du värdena för din nätverksgateway med hjälp av våra **exempel värden för självstudie**. Inkludera följande ytterligare värden:
 
    - **SKU**: Basic
    - **Virtual Network**: Välj det virtuella nätverk som du skapade tidigare. Gateway-undernätet som du skapade väljs automatiskt.
    - **Första IP-konfiguration**: den offentliga IP-adressen för din gateway.
      - Välj **skapa Gateway IP-konfiguration**, som tar dig till sidan **Välj offentlig IP-adress** .
      - Välj **+ Skapa ny** för att öppna sidan **skapa offentlig IP-adress** .
-     - Ange ett **namn** för din offentliga IP-adress. Låt SKU: n vara **Basic**och välj sedan **OK** för att spara ändringarna.
+     - Ange ett **namn** för din offentliga IP-adress. Låt SKU: n vara **Basic** och välj sedan **OK** för att spara ändringarna.
 
        > [!Note]
        > VPN Gateway stöder för närvarande endast dynamisk offentlig IP-adressallokering. Detta betyder dock inte att IP-adressen ändras efter att den har tilldelats till din VPN-gateway. Den enda gången den offentliga IP-adressen ändras är när gatewayen tas bort och återskapas. Storleks ändring, återställning eller annat internt underhåll/uppgraderingar till din VPN-gateway ändrar inte IP-adressen.
@@ -170,9 +170,9 @@ Den lokala nätverksgatewayen avser vanligtvis din lokala plats. Du ger platsen 
   >Om ditt lokala nätverk ändras eller om du behöver ändra den offentliga IP-adressen för VPN-enheten kan du uppdatera värdena senare.
 
 1. I portalen väljer du **+ skapa en resurs**.
-2. I rutan Sök anger du **lokal nätverksgateway**och väljer sedan **RETUR** för att söka. En lista med resultat visas.
-3. Välj **lokal**nätverksgateway och välj sedan **skapa** för att öppna sidan **skapa lokal** nätverksgateway.
-4. På **skapa lokal**nätverksgateway anger du värden för din lokala nätverksgateway med hjälp av våra **exempel värden för självstudier**. Inkludera följande ytterligare värden:
+2. I rutan Sök anger du **lokal nätverksgateway** och väljer sedan **RETUR** för att söka. En lista med resultat visas.
+3. Välj **lokal** nätverksgateway och välj sedan **skapa** för att öppna sidan **skapa lokal** nätverksgateway.
+4. På **skapa lokal** nätverksgateway anger du värden för din lokala nätverksgateway med hjälp av våra **exempel värden för självstudier**. Inkludera följande ytterligare värden:
 
     - **IP-adress**: den offentliga IP-adressen för VPN-enheten som du vill att Azure eller Azure Stack Hub ska ansluta till. Ange en giltig offentlig IP-adress som inte ligger bakom en NAT så att Azure kan komma åt adressen. Om du inte har IP-adressen just nu kan du använda ett värde från exemplet som plats hållare. Du måste gå tillbaka och ersätta plats hållaren med den offentliga IP-adressen för VPN-enheten. Azure kan inte ansluta till enheten förrän du anger en giltig adress.
     - **Adress utrymme**: adress intervallet för det nätverk som representerar det här lokala nätverket. Du kan lägga till flera adressintervall. Kontrol lera att de intervall som du anger inte överlappar intervallen för andra nätverk som du vill ansluta till. Azure vidarebefordrar det adressintervall som du anger till den lokala VPN-enhetens IP-adress. Använd dina egna värden om du vill ansluta till din lokala plats, inte ett exempel värde.
@@ -194,21 +194,21 @@ Använd följande steg för att skapa en VPN-anslutning från plats till plats m
 
 1. I Azure Portal väljer du **+ skapa en resurs**.
 2. Sök efter **anslutningar**.
-3. I **resultat**väljer du **anslutningar**.
-4. Välj **skapa**på **anslutning**.
+3. I **resultat** väljer du **anslutningar**.
+4. Välj **skapa** på **anslutning**.
 5. Konfigurera följande inställningar på **Skapa anslutning**:
 
     - **Anslutnings typ**: Välj plats-till-plats (IPSec).
     - **Resurs grupp**: Välj din test resurs grupp.
     - **Virtual Network Gateway**: Välj den virtuella nätverksgateway som du skapade.
-    - **Lokal**nätverksgateway: Välj den lokala nätverksgateway som du skapade.
+    - **Lokal** nätverksgateway: Välj den lokala nätverksgateway som du skapade.
     - **Anslutnings namn**: det här namnet fylls i automatiskt med värdena från de två gatewayerna.
     - **Delad nyckel**: det här värdet måste matcha det värde som du använder för din lokala VPN-enhet. I exempel exemplet använder "vi abc123", men du bör använda något mer komplicerat. Det viktiga är att det här värdet *måste* vara samma värde som du anger när du konfigurerar VPN-enheten.
-    - Värdena för **prenumeration**, **resurs grupp**och **plats** är fasta.
+    - Värdena för **prenumeration**, **resurs grupp** och **plats** är fasta.
 
 6. Välj **OK** för att skapa anslutningen.
 
-Du kan se anslutningen på sidan **anslutningar** för den virtuella Nätverksgatewayen. Status kommer att gå från *okänd* till att *ansluta*och sedan *lyckas*.
+Du kan se anslutningen på sidan **anslutningar** för den virtuella Nätverksgatewayen. Status kommer att gå från *okänd* till att *ansluta* och sedan *lyckas*.
 
 ## <a name="next-steps"></a>Nästa steg
 

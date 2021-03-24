@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: caedbd4758b9ae8c93cf9bb625ed9aac68bfa196
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901498"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895380"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Distribuera en AI-baserad lösning för identifiering av Footfall med Azure och Azure Stack hubb
 
@@ -31,28 +31,28 @@ I den här lösningen får du lära dig att:
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du börjar med den här distributions guiden kontrollerar du att:
 
 - Läs avsnittet om [identifierings mönstret för Footfall](pattern-retail-footfall-detection.md) .
 - Få användar åtkomst till en Azure Stack Development Kit (ASDK) eller en integrerad system instans för Azure Stack Hub med:
-  - [Azure App Service på Azure Stack Hub-resurs-providern](/azure-stack/operator/azure-stack-app-service-overview.md) installerad. Du måste ha operatörs åtkomst till Azure Stack Hub-instansen eller arbeta med administratören för att installera.
+  - [Azure App Service på Azure Stack Hub-resurs-providern](/azure-stack/operator/azure-stack-app-service-overview) installerad. Du måste ha operatörs åtkomst till Azure Stack Hub-instansen eller arbeta med administratören för att installera.
   - En prenumeration på ett erbjudande som ger App Service och lagrings kvot. Du behöver operatörs åtkomst för att skapa ett erbjudande.
 - Få åtkomst till en Azure-prenumeration.
   - Om du inte har en Azure-prenumeration kan du registrera dig för ett [kostnads fritt utvärderings konto](https://azure.microsoft.com/free/) innan du börjar.
 - Skapa två tjänst huvud namn i din katalog:
   - En som är konfigurerad för användning med Azure-resurser, med åtkomst i Azure-prenumerationens omfattning.
   - En konfiguration som ska användas med Azure Stack hubb resurser, med åtkomst till prenumerations omfånget Azure Stack Hub.
-  - Mer information om hur du skapar tjänstens huvud namn och hur du auktoriserar åtkomst finns i [använda en app-identitet för att få åtkomst till resurser](/azure-stack/operator/azure-stack-create-service-principals.md). Om du föredrar att använda Azure CLI kan du läsa [skapa ett Azure-tjänstens huvud namn med Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
+  - Mer information om hur du skapar tjänstens huvud namn och hur du auktoriserar åtkomst finns i [använda en app-identitet för att få åtkomst till resurser](/azure-stack/operator/azure-stack-create-service-principals). Om du föredrar att använda Azure CLI kan du läsa [skapa ett Azure-tjänstens huvud namn med Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Distribuera Azure Cognitive Services i Azure eller Azure Stack Hub.
   - Börja med att [läsa mer om Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
-  - Gå sedan till [Distribuera Azure Cognitive Services till Azure Stack Hub](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) för att distribuera Cognitive Services på Azure Stack Hub. Du måste först registrera dig för att få åtkomst till för hands versionen.
+  - Gå sedan till [Distribuera Azure Cognitive Services till Azure Stack Hub](/azure-stack/user/azure-stack-solution-template-cognitive-services) för att distribuera Cognitive Services på Azure Stack Hub. Du måste först registrera dig för att få åtkomst till för hands versionen.
 - Klona eller hämta ett Azure Custom Vision AI dev-paket som inte har kon figurer ATS. Mer information finns i [AI-DevKit](https://azure.github.io/Vision-AI-DevKit-Pages/).
 - Registrera dig för ett Power BI-konto.
 - En Azure Cognitive Services Ansikts-API prenumerations nyckel och slut punkts-URL. Du kan få båda med [försöket Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api) kostnads fri utvärdering. Eller följ instruktionerna i [skapa ett Cognitive Services konto](/azure/cognitive-services/cognitive-services-apis-create-account).
 - Installera följande utvecklings resurser:
-  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
+  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). Du kan använda Porter för att distribuera molnappar med CNAB-paket manifest som du har fått.
   - [Visual Studio Code](https://code.visualstudio.com/)

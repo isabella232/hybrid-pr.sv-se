@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: 9fa2c351d2c13d85fe1adb17a35e165de96ea2a2
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886840"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895439"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Dirigera trafik med en geo-distribuerad app med Azure och Azure Stack hubb
 
@@ -50,18 +50,18 @@ När det gäller skalbarhet är den här lösningen inte direkt tillgänglig. Me
 
 Innan du skapar en distribuerad app kan du känna till följande saker:
 
-- **Anpassad domän för appen:** Vad är det anpassade domän namnet som kunder kommer att använda för att få åtkomst till appen? För exempel appen är det anpassade domän namnet www- * \. scalableasedemo.com.*
+- **Anpassad domän för appen:** Vad är det anpassade domän namnet som kunder kommer att använda för att få åtkomst till appen? För exempel appen är det anpassade domän namnet www- *\. scalableasedemo.com.*
 
 - **Traffic Manager domän:** Du väljer ett domän namn när du skapar en [Azure Traffic Manager-profil](/azure/traffic-manager/traffic-manager-manage-profiles). Det här namnet kombineras med *trafficmanager.net* -suffixet för att registrera en domän post som hanteras av Traffic Manager. För exempel appen är det valda namnet *skalbart-ASE-demo*. Därför är det fullständiga domän namnet som hanteras av Traffic Manager *Scalable-ASE-demo.trafficmanager.net*.
 
 - **Strategi för skalning av appens avtryck:** Bestäm om appens utrymme ska distribueras över flera App Service miljöer i en enda region, flera regioner eller en blandning av båda metoderna. Beslutet bör baseras på förväntningar av var kund trafiken kommer att slutföras och hur väl resten av en Apps stödjande backend-infrastruktur kan skalas. Till exempel, med en tillstånds lös app på 100%, kan en app skalas enorma med en kombination av flera App Service miljöer per Azure-region, multiplicerat med App Service miljöer som distribuerats över flera Azure-regioner. Med 15 globala Azure-regioner som är tillgängliga för att välja bland kan kunder verkligen bygga en världs omfattande storskalig app. För exempel programmet som används här har tre App Service miljöer skapats i en enda Azure-region (södra centrala USA).
 
-- **Namngivnings konvention för App Service miljöer:** Varje App Service miljö kräver ett unikt namn. Utöver en eller två App Service miljöer är det bra att ha en namngivnings konvention som hjälper dig att identifiera varje App Service miljö. För den exempel app som används här användes en enkel namngivnings konvention. Namnen på de tre App Services miljöerna är *fe1ase*, *fe2ase*och *fe3ase*.
+- **Namngivnings konvention för App Service miljöer:** Varje App Service miljö kräver ett unikt namn. Utöver en eller två App Service miljöer är det bra att ha en namngivnings konvention som hjälper dig att identifiera varje App Service miljö. För den exempel app som används här användes en enkel namngivnings konvention. Namnen på de tre App Services miljöerna är *fe1ase*, *fe2ase* och *fe3ase*.
 
-- **Namngivnings konvention för apparna:** Eftersom flera instanser av appen kommer att distribueras krävs ett namn för varje instans av den distribuerade appen. Med App Service-miljön för Power Apps kan samma app-namn användas i flera miljöer. Eftersom varje App Service miljö har ett unikt domänsuffix kan utvecklare välja att återanvända exakt samma app-namn i varje miljö. En utvecklare kan till exempel ha appar som heter enligt följande: *MyApp.foo1.p.azurewebsites.net*, *MyApp.foo2.p.azurewebsites.net*, *MyApp.foo3.p.azurewebsites.net*och så vidare. För den app som används här har varje App-instans ett unikt namn. De instans namn som används för appar är *webfrontend1*, *webfrontend2*och *webfrontend3*.
+- **Namngivnings konvention för apparna:** Eftersom flera instanser av appen kommer att distribueras krävs ett namn för varje instans av den distribuerade appen. Med App Service-miljön för Power Apps kan samma app-namn användas i flera miljöer. Eftersom varje App Service miljö har ett unikt domänsuffix kan utvecklare välja att återanvända exakt samma app-namn i varje miljö. En utvecklare kan till exempel ha appar som heter enligt följande: *MyApp.foo1.p.azurewebsites.net*, *MyApp.foo2.p.azurewebsites.net*, *MyApp.foo3.p.azurewebsites.net* och så vidare. För den app som används här har varje App-instans ett unikt namn. De instans namn som används för appar är *webfrontend1*, *webfrontend2* och *webfrontend3*.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram över hybrid pelare](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub är ett tillägg till Azure. Azure Stack Hub ger flexibilitet och innovation av molnbaserad data behandling till din lokala miljö, vilket möjliggör det enda hybrid molnet som gör det möjligt att bygga och distribuera hybrid program var som helst.  
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
@@ -97,7 +97,7 @@ Uppdatera DNS-zonfilen för domänen. Azure AD kan sedan verifiera ägarskapet f
 Konfigurera hybrid kontinuerlig integrering/kontinuerlig leverans (CI/CD) för att distribuera webbappen till Azure och Azure Stack hubb och skicka automatiskt ändringar till båda molnen.
 
 > [!Note]  
-> Azure Stack hubben med rätt bilder som ska köras (Windows Server och SQL) och App Service distribution krävs. Mer information finns i [krav för distribution av app service på Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Azure Stack hubben med rätt bilder som ska köras (Windows Server och SQL) och App Service distribution krävs. Mer information finns i [krav för distribution av app service på Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 #### <a name="add-code-to-azure-repos"></a>Lägg till kod i Azure databaser
 
@@ -161,7 +161,7 @@ Azure DevOps Services erbjuder en mycket konfigurerbar och hanterbar pipeline f�
 
       ![Välj Azure-prenumeration för Azure Cloud-slutpunkt i Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image9.png)
 
-6. Under **App Service Name**anger du det obligatoriska namnet för Azure App Service.
+6. Under **App Service Name** anger du det obligatoriska namnet för Azure App Service.
 
       ![Ange namn på Azure App Service i Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image10.png)
 
@@ -173,7 +173,7 @@ Azure DevOps Services erbjuder en mycket konfigurerbar och hanterbar pipeline f�
   
       ![Välj paket eller mapp för Azure App Services miljö i Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image12.png)
 
-      ![Välj paket eller mapp för Azure App Services miljö i Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image13.png)
+      ![Dialog rutan Välj mapp 1](media/solution-deployment-guide-geo-distributed/image13.png)
 
 9. Spara alla ändringar och gå tillbaka till **versions pipelinen**.
 
@@ -212,9 +212,9 @@ Azure DevOps Services erbjuder en mycket konfigurerbar och hanterbar pipeline f�
 
     ![Välj mapp för Azure App Service distribution i Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image22.png)
 
-    ![Välj mapp för Azure App Service distribution i Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image23.png)
+    ![Dialog rutan Välj mapp 2](media/solution-deployment-guide-geo-distributed/image23.png)
 
-18. Under fliken variabel lägger du till en variabel med namnet `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` , anger värdet **True**och scope till Azure Stack Hub.
+18. Under fliken variabel lägger du till en variabel med namnet `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` , anger värdet **True** och scope till Azure Stack Hub.
 
     ![Lägg till variabel till Azure App distribution i Azure DevOps Services](media/solution-deployment-guide-geo-distributed/image24.png)
 
@@ -229,7 +229,7 @@ Azure DevOps Services erbjuder en mycket konfigurerbar och hanterbar pipeline f�
 21. Spara alla ändringar.
 
 > [!Note]  
-> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
+> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
 
 ## <a name="part-2-update-web-app-options"></a>Del 2: uppdatera webb programs alternativ
 
@@ -280,7 +280,7 @@ Om du till exempel vill lägga till DNS-poster för northwindcloud.com och www \
 
 2. Sök upp sidan för hantering av DNS-poster. Varje domän leverantör har sitt eget gränssnitt för DNS-poster. Leta efter områden på webbplatsen med namnet **Domännamn**, **DNS**, eller **Namnserverhantering**.
 
-Sidan DNS-poster kan visas i **Mina domäner**. Hitta länken som heter **zonfilen**, **DNS-poster**eller **Avancerad konfiguration**.
+Sidan DNS-poster kan visas i **Mina domäner**. Hitta länken som heter **zonfilen**, **DNS-poster** eller **Avancerad konfiguration**.
 
 Skärmbilden nedan är ett exempel på en sida med DNS-poster:
 
@@ -382,13 +382,13 @@ Om du vill använda ett certifikat i App Service måste certifikatet uppfylla al
 
 #### <a name="prepare-the-web-app"></a>Förbered webbappen
 
-För att binda ett anpassat SSL-certifikat till webbappen måste [App Service plan](https://azure.microsoft.com/pricing/details/app-service/) finnas på nivån **Basic**, **standard**eller **Premium** .
+För att binda ett anpassat SSL-certifikat till webbappen måste [App Service plan](https://azure.microsoft.com/pricing/details/app-service/) finnas på nivån **Basic**, **standard** eller **Premium** .
 
 #### <a name="sign-in-to-azure"></a>Logga in på Azure
 
 1. Öppna [Azure Portal](https://portal.azure.com/) och gå till webbappen.
 
-2. Välj **app Services**på menyn till vänster och välj sedan namnet på webb programmet.
+2. Välj **app Services** på menyn till vänster och välj sedan namnet på webb programmet.
 
 ![Välj webbapp i Azure Portal](media/solution-deployment-guide-geo-distributed/image33.png)
 
@@ -471,9 +471,9 @@ När IIS eller **Certreq.exe** används för att generera en certifikatbegäran 
 
 2. Välj **överför certifikat**.
 
-3. I **PFX-certifikatfil**väljer du PFX-fil.
+3. I **PFX-certifikatfil** väljer du PFX-fil.
 
-4. I **certifikat lösen ord**skriver du det lösen ord som du skapade när du exporterade PFX-filen.
+4. I **certifikat lösen ord** skriver du det lösen ord som du skapade när du exporterade PFX-filen.
 
 5. Välj **Överför**.
 
@@ -533,7 +533,7 @@ På sidan webb program väljer du **SL-inställningar**. I **Endast HTTPS** väl
 
 ![Använda HTTPS](media/solution-deployment-guide-geo-distributed/image43.png)
 
-När åtgärden har slutförts går du till någon av de HTTP-URL: er som pekar på appen. Ett exempel:
+När åtgärden har slutförts går du till någon av de HTTP-URL: er som pekar på appen. Exempel:
 
 - https://<app_name>. azurewebsites.net
 - `https://northwindcloud.com`
@@ -545,7 +545,7 @@ Appen tillåter [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) 1,0 s
 
 1. På sidan webbapp i det vänstra navigerings fönstret väljer du SSL- **Inställningar**.
 
-2. I **TLS-version**väljer du den lägsta TLS-versionen.
+2. I **TLS-version** väljer du den lägsta TLS-versionen.
 
     ![Kräv TLS 1.1 eller 1.2](media/solution-deployment-guide-geo-distributed/image44.png)
 
@@ -555,11 +555,11 @@ Appen tillåter [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) 1,0 s
 
 2. I **Skapa Traffic Manager-profil** gör du följande:
 
-    1. I **namn**anger du ett namn för profilen. Det här namnet måste vara unikt i Traffic manager.net-zonen och resulterar i DNS-namnet trafficmanager.net, som används för att få åtkomst till den Traffic Manager profilen.
+    1. I **namn** anger du ett namn för profilen. Det här namnet måste vara unikt i Traffic manager.net-zonen och resulterar i DNS-namnet trafficmanager.net, som används för att få åtkomst till den Traffic Manager profilen.
 
-    2. I **routningsmetod**väljer du **metoden geografisk routning**.
+    2. I **routningsmetod** väljer du **metoden geografisk routning**.
 
-    3. I **prenumeration**väljer du den prenumeration som du vill skapa profilen under.
+    3. I **prenumeration** väljer du den prenumeration som du vill skapa profilen under.
 
     4. I **Resursgrupp** skapar du en ny resursgrupp att placera profilen under.
 
@@ -575,13 +575,13 @@ Appen tillåter [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) 1,0 s
 
 1. I Portal Sök fältet söker du efter **Traffic Manager profil** namn som skapades i föregående avsnitt och väljer Traffic Manager-profilen i de resultat som visas.
 
-2. I **Traffic Manager profil**i avsnittet **Inställningar** väljer du **slut punkter**.
+2. I **Traffic Manager profil** i avsnittet **Inställningar** väljer du **slut punkter**.
 
 3. Välj **Lägg till**.
 
 4. Lägger till Azure Stack Hub-slutpunkten.
 
-5. I **typ**väljer du **extern slut punkt**.
+5. I **typ** väljer du **extern slut punkt**.
 
 6. Ange ett **namn** för den här slut punkten, helst namnet på Azure Stack hubben.
 
@@ -597,13 +597,13 @@ Appen tillåter [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) 1,0 s
 
 12. Lägger till Azure-slutpunkt:
 
-    1. I **typ**väljer du **Azure-slutpunkt**.
+    1. I **typ** väljer du **Azure-slutpunkt**.
 
     2. Ange ett **namn** för slut punkten.
 
-    3. För **mål resurs typ**väljer du **App Service**.
+    3. För **mål resurs typ** väljer du **App Service**.
 
-    4. För **mål resurs**väljer du **Välj en app service** för att visa listan över Web Apps under samma prenumeration. I **resurs**väljer du App Service som används som första slut punkt.
+    4. För **mål resurs** väljer du **Välj en app service** för att visa listan över Web Apps under samma prenumeration. I **resurs** väljer du App Service som används som första slut punkt.
 
 13. Under geo-mappning väljer du en region/kontinent där resursen finns. Till exempel **Nordamerika/Central Amerika/Karibien.**
 

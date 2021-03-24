@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: ed2ad5bed8f4bd80d4a40ab7600842d5544ff97d
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886823"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895422"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Distribuera en app som skalar över molnet med Azure och Azure Stack hubb
 
@@ -30,7 +30,7 @@ I den här lösningen skapar du en exempel miljö för att:
 > - Lär dig att övervaka och spåra dina distributioner.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![diagram över hybrid pelare](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub är ett tillägg till Azure. Azure Stack Hub ger flexibilitet och innovation av molnbaserad data behandling i din lokala miljö, vilket möjliggör det enda hybrid molnet som gör det möjligt att bygga och distribuera hybrid program var som helst.  
 > 
 > Artikeln [hybrid app design överväganden](overview-app-design-considerations.md) granskar pelare för program kvalitet (placering, skalbarhet, tillgänglighet, återhämtning, hanterbarhet och säkerhet) för att utforma, distribuera och driva hybrid program. Design överväganden hjälper till att optimera hybrid utformning och minimera utmaningar i produktions miljöer.
@@ -39,16 +39,16 @@ I den här lösningen skapar du en exempel miljö för att:
 
 - En Azure-prenumeration. Om det behövs kan du skapa ett [kostnads fritt konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) innan du börjar.
 - Ett Azure Stack hubb integrerat system eller distribution av Azure Stack Development Kit (ASDK).
-  - Anvisningar om hur du installerar Azure Stack Hub finns i [Installera ASDK](/azure-stack/asdk/asdk-install.md).
+  - Anvisningar om hur du installerar Azure Stack Hub finns i [Installera ASDK](/azure-stack/asdk/asdk-install).
   - För ett Automation-skript för ASDK efter distribution går du till: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Den här installationen kan ta några timmar att slutföra.
-- Distribuera [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) PaaS-tjänster till Azure Stack Hub.
-- [Skapa planer/erbjudanden](/azure-stack/operator/service-plan-offer-subscription-overview.md) i Azure Stack Hub-miljön.
-- [Skapa klient prenumeration](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) i Azure Stack Hub-miljön.
+- Distribuera [App Service](/azure-stack/operator/azure-stack-app-service-deploy) PaaS-tjänster till Azure Stack Hub.
+- [Skapa planer/erbjudanden](/azure-stack/operator/service-plan-offer-subscription-overview) i Azure Stack Hub-miljön.
+- [Skapa klient prenumeration](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) i Azure Stack Hub-miljön.
 - Skapa en webbapp i klient prenumerationen. Anteckna den nya webb program-URL: en för senare användning.
 - Distribuera virtuella datorer i Azure pipelines (VM) i klient prenumerationen.
 - Windows Server 2016 VM med .NET 3,5 krävs. Den här virtuella datorn kommer att skapas i klient prenumerationen på Azure Stack Hub som den privata build-agenten.
-- [Windows Server 2016 med SQL 2017 VM-avbildning](/azure-stack/operator/azure-stack-add-vm-image.md) finns på Azure Stack Hub Marketplace. Om avbildningen inte är tillgänglig arbetar du med en Azure Stack nav-operator för att se till att den läggs till i miljön.
+- [Windows Server 2016 med SQL 2017 VM-avbildning](/azure-stack/operator/azure-stack-add-vm-image) finns på Azure Stack Hub Marketplace. Om avbildningen inte är tillgänglig arbetar du med en Azure Stack nav-operator för att se till att den läggs till i miljön.
 
 ## <a name="issues-and-considerations"></a>Problem och överväganden
 
@@ -79,7 +79,7 @@ Uppdatera DNS-zonfilen för domänen. Azure AD kommer att verifiera ägarskapet 
 Konfigurera hybrid kontinuerlig integrering och kontinuerlig distribution (CI/CD) för att distribuera webbappar till Azure och Azure Stack hubb och för att skicka ändringar till båda molnen.
 
 > [!Note]  
-> Azure Stack hubben med rätt bilder som ska köras (Windows Server och SQL) och App Service distribution krävs. Mer information finns i krav för App Service dokumentation [för att distribuera app service på Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Azure Stack hubben med rätt bilder som ska köras (Windows Server och SQL) och App Service distribution krävs. Mer information finns i krav för App Service dokumentation [för att distribuera app service på Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 ### <a name="add-code-to-azure-repos"></a>Lägg till kod i Azure databaser
 
@@ -145,7 +145,7 @@ Azure-pipeliner och Azure DevOps Services erbjuder en mycket konfigurerbar och h
 
       ![Välj Azure-prenumeration för Azures moln slut punkt](media/solution-deployment-guide-cross-cloud-scaling/image9.png)
 
-6. Under **App Service Name**anger du det obligatoriska namnet för Azure App Service.
+6. Under **App Service Name** anger du det obligatoriska namnet för Azure App Service.
 
       ![Ange namn på Azure App Service](media/solution-deployment-guide-cross-cloud-scaling/image10.png)
 
@@ -157,7 +157,7 @@ Azure-pipeliner och Azure DevOps Services erbjuder en mycket konfigurerbar och h
   
       ![Välj paket eller mapp för Azure App Services miljö](media/solution-deployment-guide-cross-cloud-scaling/image12.png)
 
-      ![Välj paket eller mapp för Azure App Services miljö](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
+      ![Dialog rutan Välj mapp 1](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
 
 9. Spara alla ändringar och gå tillbaka till **versions pipelinen**.
 
@@ -194,9 +194,9 @@ Azure-pipeliner och Azure DevOps Services erbjuder en mycket konfigurerbar och h
 
     ![Välj mapp för Azure App Service distribution](media/solution-deployment-guide-cross-cloud-scaling/image22.png)
 
-    ![Välj mapp för Azure App Service distribution](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
+    ![Dialog rutan Välj mapp 2](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
 
-18. Under fliken variabel lägger du till en variabel med namnet `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` , anger värdet **True**och scopet till Azure Stack.
+18. Under fliken variabel lägger du till en variabel med namnet `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` , anger värdet **True** och scopet till Azure Stack.
 
     ![Lägg till variabel i Azure App distribution](media/solution-deployment-guide-cross-cloud-scaling/image24.png)
 
@@ -211,7 +211,7 @@ Azure-pipeliner och Azure DevOps Services erbjuder en mycket konfigurerbar och h
 21. Spara alla ändringar.
 
 > [!Note]  
-> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
+> Vissa inställningar för aktiviteterna kan ha definierats automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna. i stället måste den överordnade miljö posten väljas för att redigera de här inställningarna.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publicera till Azure Stack hubb via Visual Studio
 
@@ -219,13 +219,13 @@ Genom att skapa slut punkter kan en Azure DevOps Services-version Distribuera Az
 
 1. Logga in på Azure DevOps Services och gå till appens inställnings sida.
 
-2. I **Inställningar**väljer du **säkerhet**.
+2. I **Inställningar** väljer du **säkerhet**.
 
-3. I **VSTS-grupper**väljer du **slut punkts skapare**.
+3. I **VSTS-grupper** väljer du **slut punkts skapare**.
 
 4. På fliken **medlemmar** väljer du **Lägg till**.
 
-5. I **Lägg till användare och grupper anger du**ett användar namn och väljer användaren i listan över användare.
+5. I **Lägg till användare och grupper anger du** ett användar namn och väljer användaren i listan över användare.
 
 6. Välj **Spara ändringar**.
 
@@ -233,7 +233,7 @@ Genom att skapa slut punkter kan en Azure DevOps Services-version Distribuera Az
 
 8. På fliken **medlemmar** väljer du **Lägg till**.
 
-9. I **Lägg till användare och grupper anger du**ett användar namn och väljer användaren i listan över användare.
+9. I **Lägg till användare och grupper anger du** ett användar namn och väljer användaren i listan över användare.
 
 10. Välj **Spara ändringar**.
 
@@ -242,7 +242,7 @@ Nu när slut punkts informationen finns är Azure-pipelinen till Azure Stack Hub
 ## <a name="develop-the-app-build"></a>Utveckla appens build
 
 > [!Note]  
-> Azure Stack hubben med rätt bilder som ska köras (Windows Server och SQL) och App Service distribution krävs. Mer information finns i [krav för distribution av app service på Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Azure Stack hubben med rätt bilder som ska köras (Windows Server och SQL) och App Service distribution krävs. Mer information finns i [krav för distribution av app service på Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 Använd [Azure Resource Manager mallar](https://azure.microsoft.com/resources/templates/) som Web App Code från Azure databaser för att distribuera till båda molnen.
 
@@ -286,25 +286,25 @@ Att skapa en versions definition är det sista steget i bygg processen för appa
 
 2. På fliken **utgåvor** väljer du **[+]** och väljer sedan **skapa versions definition**.
 
-3. Välj **Azure App service distribution**på **Välj en mall**och välj sedan **Använd**.
+3. Välj **Azure App service distribution** på **Välj en mall** och välj sedan **Använd**.
 
 4. Välj Azure Cloud build-appen från **källan (build definition)** på **Lägg till artefakt**.
 
 5. På fliken **pipelines** väljer du länken **1 fas**, **1 aktivitet** , för att **Visa miljö aktiviteter**.
 
-6. På fliken **uppgifter** anger du Azure som **miljö namn** och väljer AzureCloud Traders – Web EP från listan Azure- **prenumeration** .
+6. På fliken **uppgifter** anger du Azure som **miljö namn** och väljer AzureCloud Traders-Web EP från listan **Azure-prenumeration** .
 
 7. Ange **namnet på Azure App Service**, som finns `northwindtraders` i nästa skärmdump.
 
 8. För agent fasen väljer du **VÄRDBASERAD VS2017** i listan **agent kö** .
 
-9. I **distribuera Azure App Service**väljer du ett giltigt **paket eller** en giltig mapp för miljön.
+9. I **distribuera Azure App Service** väljer du ett giltigt **paket eller** en giltig mapp för miljön.
 
-10. I **Välj fil eller mapp**väljer du **OK** till **plats**.
+10. I **Välj fil eller mapp** väljer du **OK** till **plats**.
 
 11. Spara alla ändringar och gå tillbaka till **pipelinen**.
 
-12. På fliken **pipelines** väljer du **Lägg till artefakt**och väljer **NorthwindCloud Traders-fartyget** från käll listan **(build definition)** .
+12. På fliken **pipelines** väljer du **Lägg till artefakt** och väljer **NorthwindCloud Traders-fartyget** från käll listan **(build definition)** .
 
 13. Lägg till en annan miljö på **Välj en mall**. Välj **Azure App service distribution** och välj sedan **Använd**.
 
@@ -312,24 +312,24 @@ Att skapa en versions definition är det sista steget i bygg processen för appa
 
 15. På fliken **aktiviteter** , leta upp och välj Azure Stack Hub.
 
-16. I listan **Azure-prenumeration** väljer du **AzureStack Traders – fartyg EP** för Azure Stack Hub-slutpunkten.
+16. I listan **Azure-prenumeration** väljer du **AzureStack Traders-Vessel EP** för Azure Stack Hub-slutpunkten.
 
 17. Ange Azure Stack Hub-webbappens namn som **App Service-** namn.
 
-18. Under **agent val**väljer du **AzureStack-b Douglas FIR** från listan **agent kö** .
+18. Under **agent val** väljer du **AzureStack-b Douglas FIR** från listan **agent kö** .
 
-19. För **distribuera Azure App Service**väljer du ett giltigt **paket eller** en giltig mapp för miljön. På sidan **Välj fil eller mapp**väljer du **OK** för mappens **plats**.
+19. För **distribuera Azure App Service** väljer du ett giltigt **paket eller** en giltig mapp för miljön. På sidan **Välj fil eller mapp** väljer du **OK** för mappens **plats**.
 
-20. På fliken **variabel** letar du upp variabeln med namnet `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` . Ange värdet **True**för variabeln och ange dess omfång till **Azure Stack Hub**.
+20. På fliken **variabel** letar du upp variabeln med namnet `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` . Ange värdet **True** för variabeln och ange dess omfång till **Azure Stack Hub**.
 
-21. På fliken **pipelines** väljer du ikonen för **kontinuerlig distribution av utlösare** för NorthwindCloud Traders – webb artefakt och ställer in den **kontinuerliga distributions utlösaren** på **aktive rad**. Gör samma sak för **NorthwindCloud Traders-fartygets** artefakt.
+21. På fliken **pipeline** väljer du ikonen för **kontinuerlig distribution** av NorthwindCloud Traders-Web artefakten och ställer in den **kontinuerliga distributions utlösaren** på **aktive rad**. Gör samma sak för **NorthwindCloud Traders-fartygets** artefakt.
 
 22. För Azure Stack Hub-miljö väljer du ikonen för **för distributions villkor** ange utlösaren till **efter versionen**.
 
 23. Spara alla ändringar.
 
 > [!Note]  
-> Vissa inställningar för versions aktiviteter definieras automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna men kan ändras i de överordnade miljö objekten.
+> Vissa inställningar för versions aktiviteter definieras automatiskt som [miljövariabler](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) när du skapar en versions definition från en mall. De här inställningarna kan inte ändras i aktivitets inställningarna men kan ändras i de överordnade miljö objekten.
 
 ## <a name="create-a-release"></a>Skapa en version
 
