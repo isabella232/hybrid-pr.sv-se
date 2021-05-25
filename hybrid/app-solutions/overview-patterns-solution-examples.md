@@ -1,52 +1,52 @@
 ---
-title: Hybrid mönster och lösnings exempel för Azure och Azure Stack Hub
-description: En översikt över hybrid mönster och lösnings exempel för att lära och skapa hybrid lösningar på Azure och Azure Stack Hub.
+title: Hybridmönster och lösningsexempel för Azure och Azure Stack Hub
+description: En översikt över hybridmönster och lösningsexempel för att lära sig och skapa hybridlösningar i Azure och Azure Stack Hub.
 author: BryanLa
 ms.topic: overview
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: 9f3f13c23bec31c5132c7e90294356b9463fd72b
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895320"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343866"
 ---
-# <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Hybrid mönster och lösnings exempel för Azure och Azure Stack
+# <a name="hybrid-solution-patterns-and-examples-for-azure-and-azure-stack"></a>Hybridlösningsmönster och exempel för Azure och Azure Stack
 
-Microsoft tillhandahåller Azure och Azure Stack produkter och lösningar som ett enhetligt Azure-eko system. Microsoft Azure Stacks familjen är en utökning av Azure.
+Microsoft tillhandahåller Azure och Azure Stack produkter och lösningar som ett konsekvent Azure-ekosystem. Stack Microsoft Azure familjen är en utökning av Azure.
 
-## <a name="the-hybrid-cloud-and-hybrid-apps"></a>Hybrid molnet och hybrid appar
+## <a name="the-hybrid-cloud-and-hybrid-apps"></a>Hybridmoln- och hybridappar
 
-Azure Stack ger dig flexibilitet för molnbaserad data behandling till din lokala miljö och gränsen genom att aktivera ett *hybrid moln*. Azure Stack Hub, Azure Stack HCI och Azure Stack Edge utöka Azure från molnet till våra data Center, avdelnings kontor, fält och annat. Med den här olika uppsättningen funktioner kan du:
+Azure Stack ger flexibiliteten hos molnbaserad databehandling till din lokala miljö och gränsen genom att aktivera ett *hybridmoln.* Azure Stack Hub, Azure Stack HCI och Azure Stack Edge Azure från molnet till dina suveräna datacenter, avdelningskontor, fält och mer. Med den här skilda uppsättningen funktioner kan du:
 
-- Återanvänd kod och kör molnbaserade appar konsekvent i Azure och i dina lokala miljöer.
-- Kör traditionella virtualiserade arbets belastningar med valfria anslutningar till Azure-tjänster.
-- Överför data till molnet eller behåll dem i det suveräna data centret för att upprätthålla efterlevnaden.
-- Kör maskin vara som kan accelereras med maskin vara, containerbaserade eller virtualiserade arbets belastningar, allt på den intelligenta gränsen.
+- Återanvänd kod och kör molnbaserade appar konsekvent i Azure och dina lokala miljöer.
+- Kör traditionella virtualiserade arbetsbelastningar med valfria anslutningar till Azure-tjänster.
+- Överför data till molnet eller behåll dem i ditt suveräna datacenter för att upprätthålla efterlevnad.
+- Kör maskinvaruaccelererad maskininlärning, containerbaserade eller virtualiserade arbetsbelastningar på den intelligenta nätverkskanten.
 
-Appar som sträcker sig över moln kallas även *hybrid appar*. Du kan bygga hybrid molnappar i Azure och distribuera dem till din anslutna eller frånkopplade data Center var du än befinner dig.
+Appar som sträcker sig över moln kallas även *hybridappar.* Du kan skapa hybridmolnappar i Azure och distribuera dem till ditt anslutna eller frånkopplade datacenter var som helst.
 
-Scenarier med hybrid program varierar kraftigt med de resurser som är tillgängliga för utveckling. De omfattar också överväganden som geografi, säkerhet, Internet åtkomst och andra. Även om mönstren och lösningarna som beskrivs här inte uppfyller alla krav, ger de rikt linjer och exempel för att utforska och återanvända samtidigt som de implementerar hybrid lösningar.
+Hybridappscenarier varierar avsevärt med de resurser som är tillgängliga för utveckling. De omfattar även överväganden som geografi, säkerhet, Internetåtkomst med mera. Även om lösningsmönstren och exemplen som beskrivs här inte uppfyller alla krav ger de riktlinjer och exempel för att utforska och återanvända när du implementerar hybridlösningar.
 
-## <a name="design-patterns"></a>Designmönster
+## <a name="solution-patterns"></a>Lösningsmönster
 
-Design mönster utslagning generaliserad design vägledning, från verkliga världs kund scenarier och upplevelser. Ett mönster är abstrakt, vilket gör det möjligt att använda dem på olika typer av scenarier eller vertikala branscher. Varje mönster dokumenterar kontexten och problemet och ger en översikt över ett lösnings exempel. Lösnings exemplet är avsett som en möjlig implementering av mönstret.
+Lösningsmönster och generaliserad, repeterbar designvägledning, från verkliga kundscenarier och upplevelser. Ett mönster är abstrakt, vilket gör att det kan tillämpas på olika typer av scenarier eller vertikala branscher. Varje mönster dokumenterar kontexten och problemet och ger en översikt över ett lösningsexempel. Lösningsexempel är avsett som en möjlig implementering av mönstret.
 
-Det finns två typer av mönster artiklar:
+Det finns två typer av mönsterartiklar:
 
-- Enstaka mönster: ger design vägledning för ett enda allmänt syfte.
-- Multi-Pattern: ger design rikt linjer för hur du använder flera mönster. Det här mönstret krävs ofta för att lösa mer komplexa scenarier eller branschspecifika problem.
+- Enskilt mönster: ger designvägledning för ett enda scenario för generell användning.
+- Flera mönster: ger designvägledning där tillämpning av flera mönster används. Det här mönstret krävs ofta för att lösa mer komplexa scenarier eller branschspecifika problem.
 
 ## <a name="solution-deployment-guides"></a>Guider för lösningsdistribution
 
-Steg för steg-distributions guider hjälper till att distribuera ett lösnings exempel. Guiden kan också referera till ett kod exempel för assistenten som lagras i [exempel lagrings platsen](https://github.com/Azure-Samples/azure-intelligent-edge-patterns)för GitHub-lösningar.
+Stegvisa distributionsguider hjälper dig att distribuera ett lösningsexempel. Guiden kan även referera till ett tillhörande kodexempel som lagras i [GitHub-lösningsexempeldatabasen](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Se [Azure Stacks familj med produkter och lösningar](/azure-stack) för att lära dig mer om hela portföljen med produkter och lösningar.
-- Utforska avsnitten "mönster" och "lösnings distributions guider" i innehålls förteckningen om du vill veta mer om dem.
-- Läs om [design överväganden för Hybrid appar](overview-app-design-considerations.md) om du vill läsa mer om program varu kvalitet för att utforma, distribuera och driva hybrid program.
-- [Konfigurera en utvecklings miljö på Azure Stack](/azure-stack/user/azure-stack-dev-start) och [distribuera din första app](/azure-stack/user/azure-stack-dev-start-deploy-app) på Azure Stack.
+- Se Azure Stack [produkt- och lösningsfamiljen för](/azure-stack) att lära dig mer om hela portföljen med produkter och lösningar.
+- Utforska avsnitten "Mönster" och "Lösningsdistributionsguider" i toc för att lära dig mer om var och en.
+- Läs mer om [designöverväganden för hybridappar](overview-app-design-considerations.md) för att granska grundpelare för programvarukvalitet för att utforma, distribuera och använda hybridappar.
+- [Konfigurera en utvecklingsmiljö på Azure Stack](/azure-stack/user/azure-stack-dev-start) distribuera [din första app](/azure-stack/user/azure-stack-dev-start-deploy-app) på Azure Stack.
