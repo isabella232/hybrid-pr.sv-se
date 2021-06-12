@@ -9,7 +9,7 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 03/09/2021
+  ms.date: 06/11/2021
   ms.custom: e2e-hybrid
 highlightedContent:
   items:
@@ -31,7 +31,7 @@ highlightedContent:
     - title: Skapa moderna hybridprogram med Azure Arc och Azure Stack
       itemType: video
       url: 'https://channel9.msdn.com/Shows/Azure-Friday/Building-modern-hybrid-applications-with-Azure-Arc-and-Azure-Stack'
-    - title: 'IT Ops-föredrag: All Things Hybrid (med Mark Russinovich)'
+    - title: 'IT Ops Talks: All Things Hybrid (med Mark Russinovich)'
       itemType: video
       url: 'https://techcommunity.microsoft.com/t5/itops-talk-blog/bg-p/ITOpsTalkBlog/label-name/ITOps%20Talks?WT.mc_modinfra-12531-socuff'
     - title: Introduktion till Azure Modular Datacenter
@@ -319,6 +319,20 @@ additionalContent:
               text: Skala dynamiskt från Azure Stack Hub till Azure
             - url: 'https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030'
               text: Vad är nytt för Azure Stack HCI
+        - title: Utveckling och integration
+          links:
+            - url: 'https://www.youtube.com/watch?v=to8D7Xl9SU8'
+              text: Introduktion till Azure Stack-hybridappar
+            - url: 'https://mybuild.microsoft.com/sessions/2debfc2e-f0b3-4adf-bcec-d126930f806f'
+              text: Skapa molnbaserade program som kan köras var som helst
+            - url: 'https://mybuild.microsoft.com/sessions/9f56bc10-30bd-42e2-afc8-b61b22260c49'
+              text: Skapa konsekventa hybrid- och multimolnprogram med Azure Arc (fråga experterna)
+            - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
+              text: Skala dynamiskt från Azure Stack Hub till Azure
+            - url: 'https://mybuild.microsoft.com/sessions/92bd3e12-fbf4-4278-b68f-fe776b02adfa'
+              text: Logic Apps – Framtidens integration
+            - url: 'https://mybuild.microsoft.com/sessions/76ebac39-517d-44da-a58e-df4193b5efa9'
+              text: Framtiden för modern programutveckling med .NET
         - title: Edge
           links:
             - url: 'https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator'
@@ -340,7 +354,7 @@ additionalContent:
             - url: 'https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf'
               text: Virtuellt Azure-hybridevenemang
             - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
-              text: Cloud Adoption Framework – hybridscenario och scenario med flera moln
+              text: Cloud Adoption Framework – Hybrid- och multimolnscenario
             - url: /learn/modules/intro-to-azure-hybrid-services/
               text: Introduktion till Azure Hybrid-molntjänster
             - url: 'https://events.microsoft.com/'
