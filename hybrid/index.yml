@@ -295,15 +295,15 @@ additionalContent:
               text: Kubernetes-kluster med hög tillgänglighet
         - title: Distribuera exempel på applösningar
           links:
-            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
               text: Skalning mellan moln
             - url: 'https://aka.ms/hybriddevopsdeploy'
               text: Hybrid-CI/CD för DevOps
-            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
               text: Fotstegsidentifiering (detaljhandel)
-            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
               text: Geo-distribuerad app
-            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
               text: Kubernetes-kluster med hög tillgänglighet
     - title: Utvärdering och utbildningsresurser
       items:
@@ -328,7 +328,7 @@ additionalContent:
             - url: 'https://mybuild.microsoft.com/sessions/2debfc2e-f0b3-4adf-bcec-d126930f806f'
               text: Skapa molnbaserade program som kan köras var som helst
             - url: 'https://mybuild.microsoft.com/sessions/9f56bc10-30bd-42e2-afc8-b61b22260c49'
-              text: Skapa konsekventa hybrid- och multimolnprogram med Azure Arc (Fråga experterna)
+              text: Skapa konsekventa hybrid- och multimolnprogram med Azure Arc (fråga experterna)
             - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
               text: Skala dynamiskt från Azure Stack Hub till Azure
             - url: 'https://mybuild.microsoft.com/sessions/92bd3e12-fbf4-4278-b68f-fe776b02adfa'

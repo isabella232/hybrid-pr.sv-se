@@ -33,29 +33,29 @@
 - name: Guider för lösningsdistribution
   items:
     - name: Skalning mellan moln
-      href: solution-deployment-guide-cross-cloud-scaling.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
     - name: Skalning mellan moln (lokala data)
-      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data
     - name: Hybrid-CI/CD för DevOps
       href: 'https://aka.ms/hybriddevopsdeploy'
     - name: Fotstegsidentifiering (detaljhandel)
-      href: solution-deployment-guide-retail-footfall-detection.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
     - name: Geo-distribuerad app
-      href: solution-deployment-guide-geo-distributed.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
     - name: Kubernetes-kluster med hög tillgänglighet
-      href: solution-deployment-guide-highly-available-kubernetes.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
     - name: Hybridanslutning
-      href: solution-deployment-guide-connectivity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-connectivity
     - name: Hybrididentitet
-      href: solution-deployment-guide-identity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-identity
     - name: Hybridrelä
       href: 'https://aka.ms/hybridrelaydeployment'
     - name: Nivåindelad data
       href: 'https://aka.ms/tiereddatadeploy'
     - name: MongoDB med hög tillgänglighet
-      href: solution-deployment-guide-mongodb-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-mongodb-ha
     - name: SQL Server 2016 med hög tillgänglighet
-      href: solution-deployment-guide-sql-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-sql-ha
     - name: Ej lagerförda varor på gränsen
       href: 'https://aka.ms/edgeinferencingdeploy'
     - name: Träna ML-modeller på gränsen
